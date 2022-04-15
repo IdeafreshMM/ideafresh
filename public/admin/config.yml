@@ -1,89 +1,39 @@
 backend:
-  - name: git-gateway
-    branch: master # Branch to update (optional; defaults to master)
+  name: git-gateway
+  branch: master
+
 media_folder: "static/images"
 public_folder: "/images"
+
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "data/blog/" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields for each document, usually in front matter
-    - widget: "string"
-      name: "slug"
-      label: "Slug"
-      required: true
-      pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']
-      hint: >-
-          "The post URL (do not include folder or file extension)"
-    - label: "Title"
-      name: "title"
-      widget: "text"
-      required: true 
-    - label: "Date"
-      name: "date"
-      widget: "datetime"
-      required: true
-    - label: "Tags"
-      name: "tags"
-      widget: "list"
-    - label: "Last Modified"
-      name: "lastmod"
-      widget: "datetime"
-    - label: "Draft"
-      name: "draft"
-      widget: "boolean"
-    - label: "Summary"
-      name: "summary"
-      widget: "text"
-    - label: "Images"
-      name: "images"
-      widget: "list"
-    - label: "Authors"
-      name: "authors"
-      widget: "list"
-    - label: "Canonical Url"
-      name: "canonicalUrl"
-      widget: "String"
-    - label: "Body"
-      name: "body"
-      widget: "markdown"
+  - name: "blog"
+    label: "Blog"
+    folder: "data/blog/"
+    create: true
+    fields:
+    - {label: "Slug", name: "slug", widget: "string", require: true}
+    - {label: "Title", name: "title", widget: "string", require: true}
+    - {label: "Date", name: "date", widget: "datetime", require: true}
+    - {label: "Tags", name: "tags", widget: "list"}
+    - {label: "Last Modified", name: "lastmod", widget: "datetime"}
+    - {label: "Draft", name: "draft", widget: "boolean"}
+    - {label: "Summary", name: "summary", widget: "text"}
+    - {label: "Images", name: "images", widget: "list"}
+    - {label: "Authors", name: "authors", widget: "list"}
+    - {label: "Canonical Url", name: "canonicalUrl", widget: "string"}
+    - {label: "Body", name: "body", widget: "markdown"}
   - name: "author"
     label: "Author"
     folder: "data/authors"
     create: true
-    fields: # The fields for each document, usually in front matter
-    - widget: "string"
-      name: "slug"
-      label: "Slug"
-      required: true
-      pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']
-      hint: >-
-          "The post URL (do not include folder or file extension)"
-    - label: "Name"
-      name: "name"
-      widget: "string"
-    - label: "Avator"
-      name: "avator"
-      widget: "string"
-    - label: "Occupation"
-      name: "occupation"
-      widget: "string"
-    - label: "Company"
-      name: "company"
-      widget: "string"
-    - label: "Email"
-      name: "email"
-      widget: "string"
-    - label: "Twitter"
-      name: "twitter"
-      widget: "string"
-    - label: "LinkedIn"
-      name: "linkedin"
-      widget: "string"
-    - label: "Github"
-      name: "github"
-      widget: "string"
-    - label: "About"
-      name: "about"
-      widget: "markdown"
+    fields:
+    - {label: "Slug", name: "slug", widget: "string", require: true}
+    - {label: "Name", name: "name", widget: "string", require: true}
+    - {label: "Avator", name: "avator", widget: "string", require: true}
+    - {label: "Occupation", name: "occupation", widget: "string"}
+    - {label: "Company", name: "company", widget: "string"}
+    - {label: "Email", name: "email", widget: "string"}
+    - {label: "Twitter", name: "twitter", widget: "string"}
+    - {label: "LinkedIn", name: "linkin", widget: "string"}
+    - {label: "Github", name: "github", widget: "string"}
+    - {label: "About", name: "about", widget: "markdown"}
