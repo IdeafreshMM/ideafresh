@@ -5,8 +5,8 @@ const siteMetadata = {
   description: 'Fresh Ideas and thoughts for you',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://bucolic-snickerdoodle-b93aa7.netlify.app/',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://ideafresh.netlify.app/',
+  siteRepo: 'https://github.com/TunTauk/ideafresh',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',

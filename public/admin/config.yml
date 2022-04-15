@@ -29,11 +29,10 @@ collections:
     fields:
     - {label: "Slug", name: "slug", widget: "string", require: true}
     - {label: "Name", name: "name", widget: "string", require: true}
-    - {label: "Avator", name: "avator", widget: "string", require: true}
+    - {label: "Avatar", name: "avatar", widget: "string", require: true}
     - {label: "Occupation", name: "occupation", widget: "string"}
     - {label: "Company", name: "company", widget: "string"}
     - {label: "Email", name: "email", widget: "string"}
-    - {label: "Twitter", name: "twitter", widget: "string"}
-    - {label: "LinkedIn", name: "linkin", widget: "string"}
+    - {label: "Facebook", name: "facebook", widget: "string"}
     - {label: "Github", name: "github", widget: "string"}
-    - {label: "About", name: "about", widget: "markdown"}
+    - {label: "About", name: "body", widget: "markdown"}
