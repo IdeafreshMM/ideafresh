@@ -48,7 +48,6 @@ collections:
     - label: "Body"
       name: "body"
       widget: "markdown"
-collections:
   - name: "author"
     label: "Author"
     folder: "data/authors"
