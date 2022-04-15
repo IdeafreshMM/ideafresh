@@ -8,11 +8,17 @@ collections:
     label: "Blog" # Used in the UI
     folder: "data/blog/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{day}}-{{month}}-{{year}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+    - widget: "string"
+      name: "slug"
+      label: "Slug"
+      required: true
+      pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']
+      hint: >-
+          "The post URL (do not include folder or file extension)"
     - label: "Title"
       name: "title"
-      widget: "string"
+      widget: "text"
       required: true 
     - label: "Date"
       name: "date"
@@ -21,10 +27,64 @@ collections:
     - label: "Tags"
       name: "tags"
       widget: "list"
-      fields:
-      - label: "String"
-        name: "String"
-        widget: "string"
+    - label: "Last Modified"
+      name: "lastmod"
+      widget: "datetime"
+    - label: "Draft"
+      name: "draft"
+      widget: "boolean"
+    - label: "Summary"
+      name: "summary"
+      widget: "text"
+    - label: "Images"
+      name: "images"
+      widget: "list"
+    - label: "Authors"
+      name: "authors"
+      widget: "list"
+    - label: "Canonical Url"
+      name: "canonicalUrl"
+      widget: "String"
     - label: "Body"
       name: "body"
+      widget: "markdown"
+collections:
+  - name: "author"
+    label: "Author"
+    folder: "data/authors"
+    create: true
+    fields: # The fields for each document, usually in front matter
+    - widget: "string"
+      name: "slug"
+      label: "Slug"
+      required: true
+      pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']
+      hint: >-
+          "The post URL (do not include folder or file extension)"
+    - label: "Name"
+      name: "name"
+      widget: "string"
+    - label: "Avator"
+      name: "avator"
+      widget: "string"
+    - label: "Occupation"
+      name: "occupation"
+      widget: "string"
+    - label: "Company"
+      name: "company"
+      widget: "string"
+    - label: "Email"
+      name: "email"
+      widget: "string"
+    - label: "Twitter"
+      name: "twitter"
+      widget: "string"
+    - label: "LinkedIn"
+      name: "linkedin"
+      widget: "string"
+    - label: "Github"
+      name: "github"
+      widget: "string"
+    - label: "About"
+      name: "about"
       widget: "markdown"
