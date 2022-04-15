@@ -4,19 +4,18 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 collections:
-  name: "blog" # Used in routes, e.g., /admin/collections/blog
-  label: "Blog" # Used in the UI
-  folder: "data/blog/" # The path to the folder where the documents are stored
-  create: true # Allow users to create new documents in this collection
-  slug: "{{day}}-{{month}}-{{year}}" # Filename template, e.g., YYYY-MM-DD-title.md
-fields: # The fields for each document, usually in front matter
-- {label: "Title", name: "title", widget: "string", required: true}
-- {label: "Date", name: "date", widget: "datetime", required: true}
-- label: "Tags",
-  name: "tags",
-  widget: "list", 
-  fields:
-    - label: "String",
-      name: "string",
-      widget: "string",
-- {label: "Body", name: "body", widget: "markdown"}
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "data/blog/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{day}}-{{month}}-{{year}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+    - { label: "Title", name: "title", widget: "string", required: true }
+    - { label: "Date", name: "date", widget: "datetime", required: true }
+    - {
+        label: "Tags",
+        name: "tags",
+        widget: "list", 
+        fields:
+        - { label: "String", name: "string", widget: "string" }
+    - { label: "Body", name: "body", widget: "markdown" }
