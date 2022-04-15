@@ -1,7 +1,7 @@
 ---
 slug: zero-percent
 name: Zero Percent
-avatar: /images/tt.png
+avatar: /static/images/tt.png
 occupation: Freelance Developer
 company: Ideafresh
 email: tauktun628@gmail.com
