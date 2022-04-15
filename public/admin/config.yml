@@ -18,5 +18,5 @@ collections:
         widget: "list", 
         fields:
         - { label: "String", name: "string", widget: "string" }
-    }
+      }
     - { label: "Body", name: "body", widget: "markdown" }
