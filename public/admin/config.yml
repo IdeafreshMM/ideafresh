@@ -13,14 +13,14 @@ collections:
     fields:
     - {label: "Slug", name: "slug", widget: "string", require: true}
     - {label: "Title", name: "title", widget: "string", require: true}
-    - {label: "Date", name: "date", widget: "datetime", require: true}
-    - {label: "Tags", name: "tags", widget: "list"}
-    - {label: "Last Modified", name: "lastmod", widget: "datetime"}
-    - {label: "Draft", name: "draft", widget: "boolean"}
-    - {label: "Summary", name: "summary", widget: "text"}
-    - {label: "Images", name: "images", widget: "list"}
-    - {label: "Authors", name: "authors", widget: "list"}
-    - {label: "Canonical Url", name: "canonicalUrl", widget: "string"}
+    - {label: "Date", name: "date", widget: "datetime", format: "MM/DD/YYYY" require: true}
+    - {label: "Tags", name: "tags", widget: "list", require: true}
+    - {label: "Last Modified", name: "lastmod", widget: "datetime", format: "MM/DD/YYYY" require: false}
+    - {label: "Draft", name: "draft", widget: "boolean", default: false, require: false}
+    - {label: "Summary", name: "summary", widget: "text", require: true}
+    - {label: "Images", name: "images", widget: "list", require: false}
+    - {label: "Authors", name: "authors", widget: "list", require: true}
+    - {label: "Canonical Url", name: "canonicalUrl", widget: "string", require: false}
     - {label: "Body", name: "body", widget: "markdown"}
   - name: "author"
     label: "Author"
@@ -30,9 +30,9 @@ collections:
     - {label: "Slug", name: "slug", widget: "string", require: true}
     - {label: "Name", name: "name", widget: "string", require: true}
     - {label: "Avatar", name: "avatar", widget: "string", require: true}
-    - {label: "Occupation", name: "occupation", widget: "string"}
-    - {label: "Company", name: "company", widget: "string"}
-    - {label: "Email", name: "email", widget: "string"}
-    - {label: "Facebook", name: "facebook", widget: "string"}
-    - {label: "Github", name: "github", widget: "string"}
+    - {label: "Occupation", name: "occupation", widget: "string", require: true}
+    - {label: "Company", name: "company", widget: "string", require: true}
+    - {label: "Email", name: "email", widget: "string", require: true}
+    - {label: "Facebook", name: "facebook", widget: "string", require: true}
+    - {label: "Github", name: "github", widget: "string", require: true}
     - {label: "About", name: "body", widget: "markdown"}

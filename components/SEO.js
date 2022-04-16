@@ -83,7 +83,7 @@ export const BlogSEO = ({
 }) => {
   const router = useRouter()
   const publishedAt = new Date(date).toISOString()
-  const modifiedAt = new Date(lastmod || date).toISOString()
+  const modifiedAt = lastmod ? new Date(lastmod).toISOString() : new Date(date).toISOString()
   let imagesArr =
     images.length === 0
       ? [siteMetadata.socialBanner]
