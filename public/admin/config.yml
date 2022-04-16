@@ -13,7 +13,7 @@ collections:
     fields:
     - {label: "Slug", name: "slug", widget: "string", require: true}
     - {label: "Title", name: "title", widget: "string", require: true}
-    - {label: "Date", name: "date", widget: "datetime", format: "MM/DD/YYYY" require: true}
+    - {label: "Date", name: "date", widget: "datetime", format: "MM/DD/YYYY", require: true}
     - {label: "Tags", name: "tags", widget: "list", require: true}
     - {label: "Last Modified", name: "lastmod", widget: "datetime", format: "MM/DD/YYYY" require: false}
     - {label: "Draft", name: "draft", widget: "boolean", default: false, require: false}
