@@ -7,7 +7,7 @@ lastmod: 04/15/2022
 draft: false
 summary: This is our second step.
 authors: ['default']
-canonicalUrl: ideafresh.netlify.app/the-second-step
+canonicalUrl: ideafresh.me/the-second-step
 ---
 
 Ideafresh ရဲ့ ပထမ ခြေလှမ်း အနေနဲ့ articles တွေကို facebook မှာ စရေးဖြစ်ခဲ့တယ်။ ဒါပေမဲ့လည်း ရေးဖြစ်လိုက် မရေးဖြစ်လိုက်ပါပဲ။ ကြားထဲမှာလည်း ကိစ္စ အမျိုးမျိုးကြောင့် ဆက် မရေးချင်တော့ပဲ နားခဲ့တာတွေလည်း ရှိတယ်။ ပြန်ရေးရင်ကောင်းမလား မရေးပဲနေလိုက်ရတော့မလား စဥ်းစားရင်းနဲ့ပဲ မရေးဖြစ်ပဲ ကြာနေတော့တာ။ ရေးချင်တဲ့ ရည်ရွယ်ချက် က
