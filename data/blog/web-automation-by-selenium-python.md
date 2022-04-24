@@ -17,12 +17,13 @@ Prerequisite:
 1. install [Python](https://www.python.org/downloads/).
 (**make sure python and pip can be used from the terminal.**)
 
-2. install Selenium from pip:
-```
+1. install Selenium from pip:
+
+```shell
 pip install selenium
 ```
 
-3. download the web driver related to your browser:
+1. download the web driver related to your browser:
 
 For me, I used chrome, so I download the [chrome driver](https://chromedriver.chromium.org/downloads).
   (**make sure your driver version and browser version are the same**)
@@ -37,6 +38,7 @@ driver = webdriver.Chrome("path/to/yourdriver")
 ```
 
 - `get()` function to surf the website
+
 ```py:automation.py
 driver.get("http://www.google.com")
 ```
@@ -51,21 +53,26 @@ driver.get("http://www.google.com")
   There are also other functions to find an element. I will show you later.
 
 - To get the input text field of google search, we can use find_element_by_name("q"). This can be known by using inspect element function of the browser.
+
 ```py:automation.py
 search = driver.find_element_by_name("q")
 ```
 
 - To input values, we use send_keys() function
+
 ```py:automation.py
 search.send_keys("hello world")
 ```
+
 - To press `ENTER` key, we need to `import Keys`
+
 ```py:automation.py
 from selenium.webdriver.common.keys import Keys
 search.send_keys("hello world",Keys.ENTER)
 ```
 
 - Final code will be:
+
 ```py:automation.py
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -76,7 +83,8 @@ search.send_keys("hello world",Keys.ENTER)
 ```
 
 - save the file and run from the terminal.
-```
+
+```shell
 python filename.py
 ```
 

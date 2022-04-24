@@ -6,7 +6,7 @@ occupation: Tech writer
 company: Ideafresh
 email: tauktun628@gmail.com
 facebook: https://www.facebook.com/profile.php?id=100063888946027
-github: https://github.com/Idea-fresh
+github: https://github.com/IdeafreshMM
 ---
 
-We like to share to become a better community.
+# We like to share to become a better community
