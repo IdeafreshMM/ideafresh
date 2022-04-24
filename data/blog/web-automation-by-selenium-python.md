@@ -9,7 +9,7 @@ lastmod: 04/24/2022
 draft: false
 summary: basic setup for selenium for web automation with python.
 authors:
-  - zero-percent
+  - tt
 canonicalUrl: ideafresh.me/blog/getting-start-selenium
 ---
 Web automation automates websites by using some scripting languages. Selenium is an open-sourced web automation framework and it supports C#, Python, Java, Javascript, and Kotlin. The main purpose is for validating and testing for websites but it is also used for web scrapping. Moreover, other boring stuff can be done by using selenium and it is quite fun to learn and use Selenium.
