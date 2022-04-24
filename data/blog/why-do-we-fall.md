@@ -2,8 +2,7 @@
 slug: why-do-we-fall
 title: Why do we fall?
 date: 04/24/2022
-tags:
-  - article
+tags: ['article']
 lastmod: 04/24/2022
 draft: false
 summary: why do we fall?
