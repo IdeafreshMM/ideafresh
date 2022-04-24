@@ -2,12 +2,12 @@
 slug: why-do-we-fall
 title: Why do we fall?
 date: 04/24/2022
-tags: List ["article"]
+tags: ['article']
 lastmod: 04/24/2022
 draft: false
 summary: why do we fall?
-images: List ["/static/images/why-do-we-fall.jpg"]
-authors: List ["tt"]
+images: ['/static/images/why-do-we-fall.jpg']
+authors: ['tt']
 canonicalUrl: ideafresh.me/blog/why-do-we-fall
 ---
 > Why do we fall, Bruce? So, we can learn to pick ourselves up.
