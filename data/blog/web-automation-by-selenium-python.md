@@ -83,3 +83,4 @@ python filename.py
 ```
 
 This is some basic of Selenium. I will write about some more functions of Selenium, later.
+![selenium-python](static/images/selenium.jpg)
