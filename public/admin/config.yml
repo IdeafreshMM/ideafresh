@@ -14,12 +14,12 @@ collections:
     - {label: "Slug", name: "slug", widget: "string", require: true}
     - {label: "Title", name: "title", widget: "string", require: true}
     - {label: "Date", name: "date", widget: "datetime", format: "MM/DD/YYYY", require: true}
-    - {label: "Tags", name: "tags", widget: "list", require: true}
+    - {label: "Tags", name: "tags", widget: "string", require: true}
     - {label: "Last Modified", name: "lastmod", widget: "datetime", format: "MM/DD/YYYY", require: false}
     - {label: "Draft", name: "draft", widget: "boolean", default: false, require: false}
     - {label: "Summary", name: "summary", widget: "text", require: true}
-    - {label: "Images", name: "images", widget: "list", require: false}
-    - {label: "Authors", name: "authors", widget: "list", require: true}
+    - {label: "Images", name: "images", widget: "string", require: false}
+    - {label: "Authors", name: "authors", widget: "string", require: true}
     - {label: "Canonical Url", name: "canonicalUrl", widget: "string", require: false}
     - {label: "Body", name: "body", widget: "markdown"}
   - name: "author"
