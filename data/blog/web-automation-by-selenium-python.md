@@ -17,13 +17,13 @@ Prerequisite:
 1. install [Python](https://www.python.org/downloads/).
 (**make sure python and pip can be used from the terminal.**)
 
-1. install Selenium from pip:
+2. install Selenium from pip:
 
-```shell
-pip install selenium
-```
+    ```shell
+    pip install selenium
+    ```
 
-1. download the web driver related to your browser:
+3. download the web driver related to your browser:
 
 For me, I used chrome, so I download the [chrome driver](https://chromedriver.chromium.org/downloads).
   (**make sure your driver version and browser version are the same**)

@@ -24,16 +24,16 @@ File တွေကို Computer က ဘယ်လိုဖျက်ပေးလ�
     - [Window tab ရော Application tab ရော] ဘယ်ဖက်ကဟာတွေ အကုန်လုံးကို အမှန်ခြစ်ပါ။
     - Run Cleaner ကို နှိပ်ပါ။
 
-![ccleaner-1](/static/images/ccleaner-1.png)
+    ![ccleaner-1](/static/images/ccleaner-1.png)
 
-1. File Shredder နဲ့ File ကို ဖျက်မယ်
+2. File Shredder နဲ့ File ကို ဖျက်မယ်
     - [File Shredder](https://www.fileshredder.org) ကို download ပါ
     - [Add File/Add Folder/Drag & Drop] နဲ့ ဖျက်မယ့် file တွေကို ထည့်ပါ။
     - Shred Files Now… ကိုနှိပ်ပါ။
 
-![ccleaner-2](/static/images/ccleaner-2.png)
+    ![ccleaner-2](/static/images/ccleaner-2.png)
 
-1. Shred Free Space
+3. Shred Free Space
     - CCleaner ကို ဖွင့်ပါ
     - Custom Tab က window tab အောက်က advance အောက်က Wipe Free Space ကို အဓိကပါအောင် အမှန်ခြစ်ပေးပါ (အကုန် အမှန်ခြစ်လဲ ကိစ္စမရှိပါဘူး)
     - Run Cleaner ကိုနှိပ်ပါ။
