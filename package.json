@@ -3,9 +3,9 @@
   "version": "1.5.4",
   "private": true,
   "scripts": {
-    "start" : "next start",
+    "start" : "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export -o _static",
     "serve": "next start",
     "default": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "analyze": "cross-env ANALYZE=true next build",

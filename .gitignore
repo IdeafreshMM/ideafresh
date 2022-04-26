@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+_static
 public/sitemap.xml
 .vercel
 
