@@ -7,7 +7,7 @@ lastmod: 04/24/2022
 draft: false
 summary: What is Shebang?
 authors: ['default']
-canonicalUrl: ideafresh.me/blog/why-do-we-fall
+canonicalUrl: ideafresh.me/blog/shebang
 ---
 
 ကျွန်တော်တို့bash scriptရေးတဲ့အခါဖြစ်ဖြစ်သူများ‌ ရေးထားတဲ့python fileတွေရှာစမ်းတဲ့အခါမှာဖြစ်ဖြစ် fileရဲ့ပထမဆုံးကြောင်းမှာ
