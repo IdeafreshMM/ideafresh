@@ -6,7 +6,7 @@ tags: ['linux', 'chown']
 lastmod: 04/25/2022
 draft: false
 summary: chown - change owner and group of a file
-authors: ['default']
+authors: ['nyi']
 canonicalUrl: ideafresh.me/blog/chown-linux
 ---
 
