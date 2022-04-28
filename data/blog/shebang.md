@@ -6,7 +6,7 @@ tags: ['linux', 'shebang']
 lastmod: 04/24/2022
 draft: false
 summary: What is Shebang?
-authors: ['default']
+authors: ['nyi']
 canonicalUrl: ideafresh.me/blog/shebang
 ---
 
