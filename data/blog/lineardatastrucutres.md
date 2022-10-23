@@ -4,7 +4,7 @@ title: Linear Data Structures
 date: 10/22/2022
 tags: ['array', 'linkedlist', 'stack']
 lastmod: 10/22/2022
-draft: false
+draft: true
 summary: Array and Linked List
 authors: ['jerry']
 canonicalUrl: ideafresh.me/blog/lineardatastructurebyjerry
@@ -22,7 +22,7 @@ memory မှာ 80 byte စာ နေရာလွတ်ရှာရမယ် �
 
 memory ပေါ်မှာ same data type တွေ ဆက်တိုက်သိမ်းသွားတော့ array ထဲက တစ်ခုခုလိုချင်လာရင် address တွက်ပြီးသွားယူရုံပဲ
 
-array ရဲ့ 0 ခန်းရဲ့ memory address က 0 ဆိုပါစို့ array ထဲက 10 ခန်းမြောက်ရဲ့ value ကိုလိုချင်တယ်ဆိုရင်
+array 0 ခန်းရဲ့ memory address က 0 ဆိုပါစို့ array ထဲက 10 ခန်းမြောက်ရဲ့ value ကိုလိုချင်တယ်ဆိုရင်
 
 0 + (10 \* size of data type) ကိုသွားယူရုံပဲ
 
@@ -52,7 +52,7 @@ array ထဲနောက်ထပ် ပြန်ထည့်ချင်ရင�
 အဲ့လိုမျိုးဖျက်လိုက်ရင် လုပ်ရတဲ့ operation များလို့ မဖျက်ပဲ
 ဒီအခန်းကိုဖျက်လိုက်ပြီ လို့သဘောရတဲ့ Sign တစ်ခုခုနဲ့အစားထိုးလို့လည်းရတယ်
 ဒါပေမဲ့ အဲ့လိုလုပ်တာက array size တစ်အားကြီးသွားနိုင်တယ်ပေါ့
-python, javascript တို့ရဲ့ list ဆိုလည်း နောက်ကွယ်မှာ array ကိုသုံးထားတာပဲ
+python ရဲ့ list ဆိုလည်း နောက်ကွယ်မှာ array ကိုသုံးထားတာပဲ
 သူတို့တွေ ဘယ်အချိန်မှာ array size ကိုထပ်တိုးမယ် လျှော့ချမယ်ဆိုတာကတော့ language အလိုက် ကွာသွားနိုင်တယ်ပေါ့
 
 ### Linked List
@@ -141,9 +141,11 @@ SLL နဲ့ပတ်သတ်ပြီး နာမည်ကြီးတာက
 pass by value နဲ့ pass by reference သေချာသိရင်​ဖြေရှင်းလို့လွယ်တယ်
 ဖြေကြည့်ချင်ရင်
 
----
+[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 
 အဲ့လိုမျိုး leetcode မှာ SLL data structure ပေးပြီး problem တော်တော်များများဖြေရှင်းခိုင်းလေ့ရှိတယ် အဲ့တော့သူ့ကိုသိကိုသိထားတာကောင်းတယ်ပေါ့
+
+---
 
 ### Doubly Linked List
 
@@ -224,6 +226,8 @@ Linked List ထဲမှာနောက်ထပ် circular singly linked ,
 Circular doubly linked list တို့ဆိုပြီးရှိသေးတယ်
 နောက်ဆုံး node တွေက null ကိုမညွှန်းပဲနဲ့ head node တွေကိုပြန်ညွှန်းတာမျိုးပေါ့
 ဒါပေမဲ့ singly နဲ့ doubly လောက်ကိုပဲ အဓိကထားသုံးလေ့ရှိကြတယ်
+
+---
 
 ### Stack
 
