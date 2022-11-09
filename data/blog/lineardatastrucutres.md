@@ -1,65 +1,71 @@
 ---
-slug: lineardatastructures
-title: Linear Data Structures
+slug: array-linkedlist
+title: Array and LinkedList
 date: 10/22/2022
-tags: ['array', 'linkedlist', 'stack']
+tags: ['array', 'linkedlist']
 lastmod: 10/22/2022
-draft: true
-summary: Array and Linked List
+draft: false
+summary: What is array and linkedlist?
 authors: ['jerry']
-canonicalUrl: ideafresh.me/blog/lineardatastructurebyjerry
+canonicalUrl: ideafresh.me/blog/array-linkedlist-by-jerry
 ---
 
 ### Array
 
 Array မှာ element တွေ အစဥ်လိုက် memory ပေါ်မှာနေရာယူတယ်
-element 20 အတွက် array တစ်ခုလိုချင်ရင် 20လုံး ဆန့်မယ့် memory နေရာလွတ်ရှာပြီးမှ အဲ့ထဲထည့်တယ်
-ဥပမာ Integer တွေပါတဲ့ အခန်း 20 အတွက် array ဆောက်မယ်ဆိုရင် integer တစ်ခုအတွက်ကုန်မယ့် byte size နဲ့အခန်းအရေအတွက်ကို မြောက်ပြီး Memory ပေါ်မှာနေရာယူတယ်ပေါ့
+array တစ်ခုကိုသိမ်းချင်တယ်ဆိုရင် လိုတဲ့ memoryအလွတ်ကို ရှာပြီး အဲ့ထဲမှာ array သွားသိမ်းတယ်
+ဥပမာ interger 5ခုအတွက် arrayတစ်ခု ဆောက်ချင်တယ်ဆိုရင်
+memory အလွတ် 20 byte ရှိတဲ့နေရာကိုရှာပြီး array ကိုသိမ်းရတယ်
+integer ဆိုတော့ 4 byte ကုန်မယ် 5လုံးစာ အတွက်ဆိုရင်
+20byte
+အဲ့တော့ memory မှာ 20 byte စာ နေရာလွတ်ရှာရမယ်
+ပြီးရင် အဲ့မှာ array ကိုသိမ်းလိုက်တယ်ပါ့
+ပြီးရင် arr[0] ရဲ့ memory address ကိုမှတ်ထားလိုက်တယ်
 
-integer ဆိုတော့ 4 byte ကုန်မယ် အခန်း 20 အတွက်ဆိုရင်
-
-memory မှာ 80 byte စာ နေရာလွတ်ရှာရမယ် အဲ့လိုပေါ့
+integer က 4byte ပဲယူတာရှိသလို 8byte ယူတာလဲရှိတယ်
+အခုက 4byte နဲ့တွက်ထားတာ
 
 memory ပေါ်မှာ same data type တွေ ဆက်တိုက်သိမ်းသွားတော့ array ထဲက တစ်ခုခုလိုချင်လာရင် address တွက်ပြီးသွားယူရုံပဲ
 
-array 0 ခန်းရဲ့ memory address က 0 ဆိုပါစို့ array ထဲက 10 ခန်းမြောက်ရဲ့ value ကိုလိုချင်တယ်ဆိုရင်
+array 0 ခန်းရဲ့ memory address က 1024 ကစတယ်ဆိုပါစို့ array ထဲက arr[2] ရဲ့ value ကိုလိုချင်တယ်ဆိုရင်
 
-0 + (10 \* size of data type) ကိုသွားယူရုံပဲ
+1024 + (2 \* size of data type) ကိုသွားယူရုံပဲ
 
 integer ဆိုရင် 4 byte
 
-O+10\*4 =40
+1024+(8)=1032
 
-memory address 40 ကိုသွား access လုပ်ရင် array ထဲက 10 မြောက်အခန်းကိုရတယ်
+memory address 1032 ကိုသွား access လုပ်ရင် arrray[2] မြောက်အခန်းကိုရတယ်
+1032ကနေ1036 ထိရှိသမျှ bit တွေအကုန်ယူလိုက်ရင်ရပြီ
 
 အဲ့လိုလိုချင်တဲ့အခန်းကို memory address တွက်ပြီး access လုပ်ရုံမလို့ constant time ရတယ်
 
-![SinglyLinkedList](/static/images/lineards/array.png)
+![Array Byte Addressing](/static/images/lineards/array.png)
 
-data structure တော်တော်များများ array ကိုအခြေခံပြီးဆောက်ကြတယ်
+အခြေခံအကျဆုံး data structure ဖြစ်တယ်
+data structure တော်တော်များများ array ကိုအခြေခံပြီးဆောက်ကြတယ်.
 
 ဥပမာ hashtable, heap
 
 Hashtable ဆိုလည်း constant time ရအောင် array ထဲမှာ value တွေထည့်တယ်
-
 heap ကျတော့ child တွေ parent တွေကို အလွယ်တကူ access လုပ်လို့ရအောင် array ကိုအသုံးပြုတယ်
 
-အခြေခံအကျဆုံး data structure လို့တောင်ပြောလို့ရတယ်
 အားနည်းချက်က လိုချင်တဲ့ အခန်းကို memory ပေါ်မှာ အရင်ကြေငြာရတယ် dynamic မဖြစ်ဘူး
-
-array ထဲနောက်ထပ် ပြန်ထည့်ချင်ရင် နောက်ထပ်ထည့်မဲ့ dataတွေအတွက် လိုတဲ့ memory အလွတ်ကိုရှာ array အဟောင်းကို copy ပြန်ကူး အဲ့လိုလုပ်ရတယ်
+array ထဲထပ်ထည့်ချင်တာဆိုရင်လည်း ဒီတိုင်းနောက်ဆုံးမှာထည့်လိုက်လို့မရဘူး
+array ရဲ့နောက်က memory က လွတ်နေမယ်လို့ပြောလို့မရတာကိုး
+အသစ်ပြန်ထည့်ချင်ရင် နောက်ထပ်ထည့်မဲ့ dataတွေအတွက် လိုတဲ့ memory အလွတ်ကိုရှာ array အဟောင်းကို copy ပြန်ကူး အဲ့လိုလုပ်ရတယ်
 ဖျက်ချင်တာဆိုရင်လည်း ခုနလိုပဲ ကျန်တဲ့ element တွေ array အသစ်ထဲပြောင်းထည့်ရတယ်
 အဲ့လိုမျိုးဖျက်လိုက်ရင် လုပ်ရတဲ့ operation များလို့ မဖျက်ပဲ
 ဒီအခန်းကိုဖျက်လိုက်ပြီ လို့သဘောရတဲ့ Sign တစ်ခုခုနဲ့အစားထိုးလို့လည်းရတယ်
-ဒါပေမဲ့ အဲ့လိုလုပ်တာက array size တစ်အားကြီးသွားနိုင်တယ်ပေါ့
-python ရဲ့ list ဆိုလည်း နောက်ကွယ်မှာ array ကိုသုံးထားတာပဲ
-သူတို့တွေ ဘယ်အချိန်မှာ array size ကိုထပ်တိုးမယ် လျှော့ချမယ်ဆိုတာကတော့ language အလိုက် ကွာသွားနိုင်တယ်ပေါ့
+size တော့မလိုအပ်ဘဲတစ်အားကြီးသွားနိုင်တယ်ပေါ့
 
 ### Linked List
 
+linked list မှာ node တွေကတစ်ခုနဲ့တစ်ခုချိတ်ပြီးmemory ပေါ်မှာနေရာနေရာယူတယ်
+array လိုမျိုး memory address တွေက အစဥ်လိုက်လာစရာမလိုဘူး
 linked list ထဲက node တွေမှာ သူ့ အရှေ့ node ရဲ့ reference သို့ အနောက် node ရဲ့ reference ရှိမယ်
-
-အဲ့လို reference သိမ်းထားပြီး node တွေအချင်းချင်းချိတ်ထားကြတယ်ပေါ့
+node တစ်ခုကနေတစ်ခြားတစ်ခုကိုသွားမယ်ဆို သူသိမ်းထားတဲ့တစ်ခြားnode ရဲ့ referenceကိုသွားလိုက်ရင်ရပြီ
+အဲ့လိုမျိုး reference သိမ်းထားပြီး node တွေအချင်းချင်းချိတ်ထားကြတယ်ပေါ့
 
 Linked list ကို အမျိူးအစားခွဲရင် အဓိကအားဖြင့်
 
@@ -74,6 +80,12 @@ Singly Linked List မှာကြတော့ node တိုင်းကနေ�
 ![SinglyLinkedList](/static/images/lineards/l.PNG)
 
 node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
+node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
+
+Java နဲ့ ရေးမယ်ဆို node တစ်ခုကို ကိုယ်စားပြုဖို့ class (template of object) တစ်ခုဆောက်မယ်
+
+Java မှာ object တစ်ခုဆောက်မယ်ဆို `new` ဆိုတဲ့ keyword ကိုသုံးပေးရတယ် အဲ့ကြမှ runtime မှာ JVM ကheap ပေါ်မှာ object ဆောက်ပြီး reference ကို return ပြန်ပေးတယ်
+reference ဆိုတာကြတော့ heap ရဲ့ဘယ်နေရာမှာ object ကိုသိမ်းထားလဲဆိုတဲ့ address pointer တစ်မျိုးပေါ့
 
 ```java:SinglyLinkedList.java
 
@@ -101,9 +113,13 @@ public class SinglyLinkedList {
 
 အပေါ်က code ကိုကြည့်ရင် node တစ်ခုရှိမယ် အဲ့ node ထဲမှာ နောက် node တစ်ခုရဲ့ reference ရှိမယ်
 
-next node ရဲ့ referemce ကောသိမ်းရတာမလို့ array ထက် memory ပိုကုန်တယ်
+SLL ကnext node ရဲ့ referece ကိုသိမ်းရတာမလို့ array ထက် memory ပိုကုန်တယ်
 
-ဒါပေမဲ့ node အသစ်ထပ်ထည့်ချင်ရင် ပထမဆုံး node ရဲ့ reference ကိုသိရုံနဲ့ ထည့်လိုက်လို့ရတယ် constant timeနဲ့
+ဒါပေမဲ့ node အသစ်ထပ်ထည့်ချင်ရင် ပထမဆုံး node ရဲ့ reference ကိုသိရုံနဲ့ ထည့်လိုက်လို့ရတယ်
+
+node တွေကျတာ့ array လိုမျိုး memory ပေါ်မှာအစဥ်လိုက်ဖြစ်စရာမလိုတော့ဘူး
+next node က ဘယ်နေရာမှာပဲရှိရှိ သူရဲ့ reference ရှိတော့
+အဲ့တိုင်းသွားaccessရုံပဲ
 
 ```java:addNodeAtTheBeginning.java
 
@@ -113,21 +129,24 @@ public void addNodeAtTheBeginning(int data) {
 
         if (this.head == null) {
 
-    	    this.head = newNode;
+            this.head = newNode;
 
         } else {
 
             newNode.next = this.head;
             this.head = newNode;
 
-    	}
+        }
 
 }
 ```
 
+ပထမနေရာကိုထည့်မယ်ဆိုရင် constant time O(1)
+ဒါမှမဟုတ်နောက်ဆုံးမှာထည့်ချင်တာဆိုရင်တော့linked list တစ်လျှောက်နောက်ဆုံး node ကိုရှာရမှာမလို့ O(n)ပေါ့
 ဖျက်မယ်ဆိုရင်တော့ နည်းနည်းစဥ်းစားရပြီ
 ဖျက်ချင်တဲ့ node ရဲ့ reference ကိုသိပေမဲ့လည်း သူ့ကိုဒီတိုင်းဖျက်လိုက်လို့မရဘူး သူ့အရှေ့node ရဲ့ reference မသိတော့ ဒီတိုင်းဖျက်လိုက်ရင် သူ့အနောက် node တွေကို ဆုံးရူံးရနိုင်တယ်ပေါ့
 အဲ့ကြတော့ node အစကနေပြီးတော့ ရှာပြီးဖျက်ပစ်ရတယ် ဆိုတော့ worst case မှာ O(n)
+
 SLL နဲ့ပတ်သတ်ပြီး နာမည်ကြီးတာက သူ့ကို reverse လုပ်ခိုင်းတာပဲ
 
 ဆိုလိုတာက
@@ -138,8 +157,7 @@ SLL နဲ့ပတ်သတ်ပြီး နာမည်ကြီးတာက
 
 2 ---> 4 ---> 5 ---> 6 ---> 1
 
-pass by value နဲ့ pass by reference သေချာသိရင်​ဖြေရှင်းလို့လွယ်တယ်
-ဖြေကြည့်ချင်ရင်
+ဖြေကြည့်ချင်ရင်
 
 [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 
@@ -181,7 +199,7 @@ Node head, tail = null;
 
 ```
 
-reference နှစ်ခုလုံးထည့်ရတော့ SLL ထက်စာရင် memory ပိုကုန်တယ်
+reference နှစ်ခုလုံးထည့်ရတော့ SLLတို့ array ထက်စာရင် memory ပိုကုန်တယ်
 သူ့ ထဲ node အသစ်ထည့်ချင်တာဆိုရင် SLL လိုပဲ ပထမဆုံး node နေရာထည့်လိုက်လို့ရတယ် constant time ရတယ်ပေါ့
 
 ```java:addNode.java
@@ -215,135 +233,21 @@ public void addNode(int item) {
     }
 ```
 
-အရှေ့ node အတွက်ကော အနောက် node အတွက်ကော reference ပါတာမလို့ node တစ်ခုခုကို ဖျက်ပစ်ချင်ရင် O(1) နဲ့ဖြတ်လိုက်လို့ရတယ် ပြီးရင် node တစ်ခုရှိရုံနဲ့ အရှေ့ အနောက် သွားလို့ရတယ် Singly ဆိုရင် next node ပဲပါတော့ အရှေ့ပြန်သွားလို့မရဘူး
+အရှေ့ node အတွက်ကော အနောက် node အတွက်ကော reference ပါတာမလို့ node တစ်ခုခုကို ဖျက်ပစ်ချင်ရင် O(1) နဲ့ဖျက်လိုက်လို့ရတယ် ပြီးရင် node တစ်ခုရှိရုံနဲ့ အရှေ့ အနောက် သွားလို့ရတယ် Singly ဆိုရင် next node ပဲပါတော့ အရှေ့ပြန်သွားလို့မရဘူး
 
 SLL ကော DLL ကော search မှာ
 node အစက နေ အဆုံးထိ တစ်ခုချင်းစီ လိုက်စစ်ရလို့ O(n) ကုန်တယ်
 node တွေထဲက data တွေက စီပြီးသား sorted ဖြစ်တောင် array လိုမျိုး binary search သုံးလို့မရဘူး random access မရလို့
-array က sorted ဆို binary search သုံးလို့ရတာကိုး O(logn) ပဲကြာတယိ
+array က sorted ဆို binary search သုံးလို့ရတာကိုး O(logn) ပဲကြာတယ်
 
 Linked List ထဲမှာနောက်ထပ် circular singly linked ,
 Circular doubly linked list တို့ဆိုပြီးရှိသေးတယ်
 နောက်ဆုံး node တွေက null ကိုမညွှန်းပဲနဲ့ head node တွေကိုပြန်ညွှန်းတာမျိုးပေါ့
 ဒါပေမဲ့ singly နဲ့ doubly လောက်ကိုပဲ အဓိကထားသုံးလေ့ရှိကြတယ်
-
----
-
-### Stack
-
-stack ရဲ့ rule က `First In First Out`
-ပထမဆုံးဝင်လာတဲ့ Node က နောက်ဆုံးမှ operation လုပ်ရမယ်ပေါ့
-နောက်ဆုံးဝင်လာတဲ့ node က ထိပ်ဆုံးကနေအလုပ်လုပ်ရမယ်
-
-```java:NodeBasedStack.java
-
-
-public class NodeBasedStack<T> implements StackInterface<T> {
-        // a private Node class
-        private class Node {
-            T data;
-        Node next;
-            public Node (T val, Node n) {
-                data = val;
-        next = n; }
-            public void setData (T val) {
-        data = val; }
-            public T getData () {
-                return data;
-            }
-            public Node getNext () {
-                return next;
-            }
-            public void setNext (Node n) {
-        next = n; }
-        }
-        Node top;
-        int size;
-        // constructor of the NodeBasedStack class
-        public NodeBasedStack () {
-            top = null;
-        size = 0; }
-        // check if the stack is empty
-        public boolean isEmpty () {
-            return top == null;
-        }
-        // get the number of elements in the stack
-        public int size () {
-            return size;
-        }
-
-        public void push (T val) {
-            Node node = new Node(val, top);
-            top = node;
-            size++;
-        }
-        // return the top element and remove it from the stack
-        public T pop () {
-            T data = null;
-            if (isEmpty()) throw new EmptyStackException();
-            else {
-                                                                    element for GC
-        data = top.getData(); // get the data stored in the top element
-        Node tmp = top; // set a tmp pointer points to the top element
-        top = top.getNext(); // update the top pointer
-        tmp.setNext(null); // update the next pointer of the original top
-
-        size--;
-        }
-        return data;
-    }
-
-    public T peek () {
-    T data = null;
-    if (isEmpty()) throw new EmptyStackException();
-    else data = top.getData(); // get the data stored in the top element
-    return data;
-    }
-
-}
-```
-
-သူ့မှာ `peek()` နဲ့ `pop() `ဆိုတဲ့ method နှစ်ခုပါတယ်
-
-peek() က ပထမဆုံး node ကို return ပြန်ပေးတယ်
-Stack ထဲက ပထမဆုံး node ဆိုတာ နောက်ဆုံး ဝင်လာတဲ့ node ကို ဆိုလိုခြင်းဖြစ်ပါတယ်
-pop() ကျတော့ ပထမဆုံးတစ်လုံးကို return ပြန်ပေးရုံတင်မကပဲ
-stack ထဲကနေပါ ထုတ်ပလိုက်တယ်
-method 2 ခုလုံးက သူ့နေရာနဲ့သူအသုံးဝင်တယ်ပေါ့
-
-Stack ကိုသုံးပြီးအောက်က problem ကိုဖြေရှင်းကြည့်ရအောင်
-
-![StackQuestion](/static/images/lineards/stackquestion.png)
-
-ဒီ problem ကို stack ကို သုံးပြီးဖြေရှင်းကြည့်ရင်
-
-```java:backspaceCompare.java
-
-public String makeAString(String s){
-        Stack<Character>stack=new Stack<>();
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)=='#'){
-                if(!stack.isEmpty()) stack.pop();
-            }
-            else stack.push(s.charAt(i));
-        }
-
-        String res="";
-        while(!stack.isEmpty()){
-            res=stack.pop()+res;
-        }
-        return res;
-    }
-public boolean backspaceCompare(String s, String t) {
-
-        return makeAString(s).equals(makeAString(t));
-
-    }
-
-```
-
-stack မသုံးဘဲဖြေရှင်းလို့လဲရတယ် ဒါပေမယ့် stack ကိုသုံးလိုက်တာက space ရယ် time complexity မှာ ပိုကောင်းတယ် နားလည်ရလည်း ပိုလွယ်တယ်
-
-### Linear data structure တွေက ရိုးရိုးရှင်းရှင်း datastructure တွေမလို့ နားလည်ရလွယ်လို့ အရှည်ကြီးရေးမထားတော့ဘူး တိုတိုနဲ့လိုရင်းကိုပဲရေးလိုက်ပါတယ်
-
-ရိုးရိုးရှင်းရှင်းတွေပေမဲ့ CS မှာ powerful အဖြစ်ဆုံး data structure တွေလည်းဖြစ်တယ်
+array နဲ့ linked list ကိုဘယ်အချိန်မှာ သုံးသင့်တယ်ဆိုတာကတော့ ကိုယ့်ဟာကိုပဲဆုံးဖြတ်ရမှာဖြစ်ပါတယ်
+array ဆို access time မြန်တယ် sorted ဖြစ်ပြီးသားဆို search တာလည်းမြန်တယ်
+ဒါပေမဲ့အသစ်ထည့်ချင် ဖျက်ချင်ရင် အလုပ်ရူပ်တယ် array size ကို table doubling လုပ်သွားလို့ရပေမဲ့ မလိုအပ်ပဲ space ကြီး သွားနိုင်တယ်
+linked list ဆိုရင် အသစ်ထပ်ထည့်ချင်ရင်မြန်တယ်
+SLL က ဖျက်ဖို့ဆို previous node ရဲ့ reference သိရင်ရတယ်
+DLL ဆိုရင် previous က ပါပြီးသားမလို့ အလုပ်မရူပ်တော့ဘူး
+ဒါပေမဲ့ space မှာကျတော့ array ထက်ပိုကုန်တယ်
