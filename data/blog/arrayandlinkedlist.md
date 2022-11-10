@@ -84,7 +84,7 @@ Singly Linked List မှာကြတော့ node တိုင်းကနေ�
 node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
 node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
 
-Java နဲ့ ရေးမယ်ဆို node တစ်ခုကို ကိုယ်စားပြုဖို့ class (template of object) တစ်ခုဆောက်ရမယ်
+Java နဲ့ ရေးမယ်ဆို node တစ်ခုကို ကိုယ်စားပြုဖို့ class (template of object) တစ်ခုဆောက်ရတယ်
 
 Java မှာ object တစ်ခုဆောက်မယ်ဆို `new` ဆိုတဲ့ keyword ကိုသုံးပေးရတယ် အဲ့ကြမှ runtime မှာ JVM ကheap ပေါ်မှာ object ဆောက်ပြီး reference ကို return ပြန်ပေးတယ်
 reference ဆိုတာကြတော့ heap ရဲ့ဘယ်နေရာမှာ object ကိုသိမ်းထားလဲဆိုတဲ့ address pointer တစ်မျိုးပေါ့
