@@ -3,11 +3,11 @@ slug: array-linkedlist
 title: Array and LinkedList
 date: 10/22/2022
 tags: ['array', 'linkedlist']
-lastmod: 10/22/2022
+lastmod: 11/10/2022
 draft: false
-summary: What is array and linkedlist?
+summary: How Array and LinkedList Works?
 authors: ['jerry']
-canonicalUrl: ideafresh.me/blog/array-linkedlist-by-jerry
+canonicalUrl: ideafresh.me/blog/arrayandlinkedlist
 ---
 
 ### Array
@@ -19,7 +19,7 @@ memory အလွတ် 20 byte ရှိတဲ့နေရာကိုရှာ�
 integer ဆိုတော့ 4 byte ကုန်မယ် 5လုံးစာ အတွက်ဆိုရင်
 20byte
 အဲ့တော့ memory မှာ 20 byte စာ နေရာလွတ်ရှာရမယ်
-ပြီးရင် အဲ့မှာ array ကိုသိမ်းလိုက်တယ်ပါ့
+အဲ့မှာ array ကိုသိမ်းလိုက်တယ်ပါ့
 ပြီးရင် arr[0] ရဲ့ memory address ကိုမှတ်ထားလိုက်တယ်
 
 integer က 4byte ပဲယူတာရှိသလို 8byte ယူတာလဲရှိတယ်
@@ -59,6 +59,8 @@ array ရဲ့နောက်က memory က လွတ်နေမယ်လိ�
 ဒီအခန်းကိုဖျက်လိုက်ပြီ လို့သဘောရတဲ့ Sign တစ်ခုခုနဲ့အစားထိုးလို့လည်းရတယ်
 size တော့မလိုအပ်ဘဲတစ်အားကြီးသွားနိုင်တယ်ပေါ့
 
+(memory addresss usually in hexa)
+
 ### Linked List
 
 linked list မှာ node တွေကတစ်ခုနဲ့တစ်ခုချိတ်ပြီးmemory ပေါ်မှာနေရာနေရာယူတယ်
@@ -82,7 +84,7 @@ Singly Linked List မှာကြတော့ node တိုင်းကနေ�
 node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
 node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
 
-Java နဲ့ ရေးမယ်ဆို node တစ်ခုကို ကိုယ်စားပြုဖို့ class (template of object) တစ်ခုဆောက်မယ်
+Java နဲ့ ရေးမယ်ဆို node တစ်ခုကို ကိုယ်စားပြုဖို့ class (template of object) တစ်ခုဆောက်ရမယ်
 
 Java မှာ object တစ်ခုဆောက်မယ်ဆို `new` ဆိုတဲ့ keyword ကိုသုံးပေးရတယ် အဲ့ကြမှ runtime မှာ JVM ကheap ပေါ်မှာ object ဆောက်ပြီး reference ကို return ပြန်ပေးတယ်
 reference ဆိုတာကြတော့ heap ရဲ့ဘယ်နေရာမှာ object ကိုသိမ်းထားလဲဆိုတဲ့ address pointer တစ်မျိုးပေါ့
