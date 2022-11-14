@@ -2,7 +2,7 @@
 slug: dijkstrasalgorithm
 title: Dijkstra's algorithm
 date: 11/13/2022
-tags: ['algorithm', 'dijkstra', 'min-heap']
+tags: ['algorithm', 'dijkstra', 'heap']
 lastmod: 11/13/2022
 draft: false
 summary: Dijkstra's Algorithm Implementation
@@ -13,8 +13,7 @@ canonicalUrl: ideafresh.me/blog/dijkstrsalgorithm
 `Dijkstra's algorithm` ကို 1959 မှာ dutch ကွန်ပြူတာပညာရှင် `Edsger Dijkstra` ကနေတီထွင်ခဲ့တာဖြစ်ပါတယ်
 node တစ်ခုကနေ တစ်ခြား node တစ်ခုကို သွားနိုင်တဲ့ အတိုဆုံးလမ်းကြောင်းကို ရှာတဲ့ နေရာမှာ အသုံးပြုပါတယ်
 algorithm ကို directed graph ဖြစ်ဖြစ် undirected graph ဖြစ်ဖြစ် အသုံးပြုလို့ရပြီး
-အဲ့သည် graph တွေသည်connected graphတွေ
-negative weight မပါတဲ့ graph တွေ ဖြစ်ရပါမယ်
+အဲ့သည် graph တွေသည် negative weight မပါတဲ့ graph တွေ ဖြစ်ရပါမယ်
 
 ### Algorithm Summary
 
@@ -266,7 +265,7 @@ public class testDijkstra {
 
 ### Time Complexity
 
-Dijkstra ရဲ့ time complexity က PQ ရဲ့ data structure ပေါ်လုံးဝမူတည်နေတယ် ပြီးတော့ တော်တော်လည်းရူပ်တယ်
+Dijkstra ရဲ့ time complexity က PQ ရဲ့ data structure ပေါ်လုံးဝမူတည်နေတယ် တော်တော်လည်းရူပ်တယ်
 
 (Not basic)
 
@@ -287,9 +286,8 @@ Edgeတွေကိုသွားပြီးတိုင်း PQ ကို up
 ### Case - 2
 
 ဒီ case မှာကျတော့ ရိုးရိုး min heap သုံးကြည့်ပါမယ်<br/>
-heap sort အတွက် insert က logn
+heap sort အတွက် insert က logn<br/>
 extract min က logn လို့မှတ်ထားပေးပါ<br/>
-
 Node တိုင်းက သူ့ရဲ့ successor ကိုရှာတာက ပထမဆုံးတစ်လုံးကို pop ရုံပဲဆိုတော့ O(1)
 PQ ထဲထည့်ရင် logn<br/>
 ဒါပေမဲ့ PQ ကို update လုပ်ဖို့ဆို node ကိုပြန်ရှာရပါတယ်
@@ -299,8 +297,8 @@ min heap မှာလိုချင်တာရှာဖို့ O(V) ကြ�
 
 ### Case - 3
 
-case 2 မှာအဓိကပြသာနာက update လုပ်ဖို့ node ကိုပြန်ရှာရပဲ<br/>
-ရှာရလွယ်အောင် Self balancing binary search tree တွေပြောင်းသုံးမယ်
+case 2 မှာအဓိကပြသာနာက update လုပ်ဖို့ node ကိုပြန်ရှာရတာပဲ<br/>
+ရှာရလွယ်အောင် Self balancing binary search treeပြောင်းသုံးမယ်
 But here the tricky part.
 SBBST တွေက value တွေနဲ့ balance ဖြစ်အောင်ထားတာ
 အဲ့တော့ Node A ကို update လုပ်ချင်တယ်ဆို ဘယ်လိုပြန်ရှာမလဲပေါ့
@@ -311,14 +309,13 @@ Mapping လုပ်ဖို့ပေါ့<br/>
 [Hashtable](https://ideafresh.me/blog/hashtable/) ကိုဖတ်ကြည့်ပါ <br/>
 mapping အတွက်ရရင် update လုပ်တာ logn နဲ့ရပြီ<br/>
 ဒီလိုမျိုး ငယ်တဲ့ node update လုပ်တာကို decrease key opeartion လုပ်တာလို့ခေါ်တယ်<br/>
-SBBST မသုံးပဲ complete min heap နဲ့ဆို array ပေါ်မှာဆောက်ထားတာမလို့ index ကို mapping လုပ်တယ်ပေါ့<br/>
+SBBST မသုံးပဲ binary heap နဲ့ဆို array ပေါ်မှာဆောက်ထားတာမလို့ index ကို mapping လုပ်တယ်ပေါ့<br/>
 ပြီးရင်သူက parent, children တွေ ကို access လုပ်တာဆိုလည်း formula သုံးလို့ရတယ်<br/>
 parent node ကိုလိုချင်ရင် i/2 သုံးလိုက်ရင်ရတယ်<br/>
 update လုပ်ပြီဆိုကတည်းက တန်ဖိုးကငယ်သွားတော့ parent ပေါ်ပဲတက်သွားမှာမလို့ပါ swap လုပ်ရင်<br/>
 (Honestly, I can't image how to make mapping for sbbst, heap one is kinda easy to see tho)
 
 `Voila` <br/>
-`C'est Tout`
 
 Time Complexity = O (V+E)\*logn
 
