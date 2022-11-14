@@ -263,11 +263,11 @@ public class testDijkstra {
 
 ```
 
+Algorithm က အမြဲတမ်းအတိုဆုံး node တွေကိုပဲရွေးပြီးသွားတော့ best first seach လုပ်တဲ့ greedy algorithm အမျိုးအစားလို့ပြောလို့ရတယ်
+
 ### Time Complexity
 
 Dijkstra ရဲ့ time complexity က PQ ရဲ့ data structure ပေါ်လုံးဝမူတည်နေတယ် တော်တော်လည်းရူပ်တယ်
-
-(Not basic)
 
 ### Case - 1
 
