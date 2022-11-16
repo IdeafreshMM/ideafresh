@@ -433,6 +433,8 @@ sbbst တွေက implementation ကတော်တော်ရူပ်တယ�
 
 ### 2^31=2147483648 items ရှိတဲ့ sbbst တစ်ခုမှာတောင် search အတွက်ဆိုရင်တောင်worst case မှာ operation ပေါင်း 31 ကြိမ်ပဲလုပ်စရာလိုတယ်
 
+(worst case depends on the tree, from 1.44log(n) to 2log(n))
+
 sbbst ဆိုတာ insert လုပ်ကတည်းကသေသေချာချာလေးဖြစ်အောင်ထည့်ရတာ right နဲ့ left ရဲ့ difference ကလည်း 1 နဲ့အောက်မှာရှိရမယ်။ အဲ့တော့ chaining အတွက် ကြိုက်တဲ့ data structure ကိုအဆင်ပြေသလို့သုံးပေါ့။ admin အထင် red black tree ကပိုခက်တယ်။ node အများကြီးကိုင်ပြီးလုပ်ရတာ ဒါပေမဲ့လည်း bucket တစ်ခုထဲကို worst case ဝင်, ဝင်လာတဲ့ worst case ကလည်း bst မှာပါလာပြီး worst case ဖြစ်မယ်ဆိုတာကတော့ သိပ်တော့ဖြစ်နိုင်ချေမရှိပါဘူး။ အဲ့လောက်ဆို average case လောက်မှာ O(logn) လောက်နဲ့လုပ်ပေးနိုင်တယ်ပေါ့။
 
 ---
