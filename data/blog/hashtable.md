@@ -481,7 +481,7 @@ Pr(x=2)=0.5^2e^-0.5/2!=0.07581633=7%
 
 အဲ့တိုင်းတွက်သွားမယ်ဆိုရင် bucket ထဲကို key တွေ5 ခုလောက် ဝင်လာနိုင်ချေက 0.00015795=0.015795 %ပဲရှိတယ်။ နောက်ထက် key တွေဆက်ဝင်လာနိုင်ချေက နည်းနည်းသွားတယ်။ key 9 ခုလောက်same bucket ထဲဝင်နိုင်ချေက ten million ပုံ တစ်ပုံပဲရှိတယ်။ အဲ့ကျတော့ Randomized ဖြစ်မယ်ဆိုရင် key တွေက bucket တွေအကုန်လုံးဆီကို nicely distributed ဖြစ်ပြီး expected average case မှာ O(1) ရမယ်။ ဆိုတော့ theory အရ hashmap က constant timeရတယ်။ ဒါပေမဲ့လည်းworst case မှာ O(n) ပဲ။ key တွေအကုန်လုံး bucket တစ်ခုထဲအကုန်ဝင်သွားနိုင်တာကိုး။ probability ဆိုတဲ့သဘောက real world မှာဖြစ်ချင်မှဖြစ်တာ။ ဥပမာ ခေါင်းပန်း နှစ်ကြိမ်လှည့်ရင် probability အရ ခေါင်းတစ်ခါ ပန်းတစ်ခါ ကျတယ်ဆိုပေမဲ့ အပြင်မှာ အဲ့လိုပုံသေဖြစ်လေ့မရှိပါဘူး။  probability က dataset ကြီးလာမှပဲ မှန်လေ့ရှိပါတယ်။ (ကျွန်တော်လည်း math major မဟုတ်တော့ probability တစ်အားကြီးမသိဘူး)။ java ကတော့ Bucket size (bucket တစ်ခုထဲဝင်လာတဲ့ key အရေအတွက်) 64 ခုရောက်တာနဲ့ self balancing tree အဖြစ်ပြောင်းလိုက်တယ်။ အာ့ကြတော့ worst case O(logn) ပဲကြာမယ်။ ခုနကပြောသလိုပဲ sbbstက implement ရတာရူပ်တယ် java ကတော့ treemap သုံးတယ်။ treemap က red black tree နဲ့ဆောက်ထားတယ်ပေါ့။ ဆိုတော့ java hashmap အတွက် Time Complexity တွက်မယ်ဆိုရင် Search အတွက် average case-O(1) worst case ဆို O(logn)။ treeifyပြန်ပြောင်းတာကနောက်ပိုင်းမှ jdk တွေမှ။ အရင်ကကဆို treeify မလုပ်တော့ worst case မှာ O(n)။ ဟုတ်ပြီ poission distribution မသုံးကြည့်ပဲ တစ်ခြား approach နဲ့randomized ဖြစ်နေတဲ့ key ချည်းအတွက်ပဲ collision ဖြစ်နိင်ချေရှိတဲ့ case ကိုသပ်သပ်တွက်ကြည့်မယ်။
 
-Birthday paradox
+### Birthday paradox
 
 ရက်ပေါင်း 365 ရှိတဲ့ထဲမှာ လူပေါင်း 23 ယောက်ရှိရင်same birthdayရှိနိုင်ချေ 50% ရှိတယ်။ ဘယ်လိုတွက်သွားတာလဲဆိုရင် မတူနိုင်ချေရှိတာကိုအရင်ရှာ ပြီးရင် 1 ထဲကနုတ် အာ့ဆိုကျန်တာက တူနိုင်ချေရှိတာပေါ့။ အခုလည်းအာ့လိုပဲ collision ဖြစ်နိုင်တာကိုအရင်ရှာမယ်ပေါ့။
 
@@ -506,6 +506,8 @@ p(k,m)=1-p'(k)=1-e^-k(k-1)/2m
 m=64, k=10
 
 မှာဆိုရင် 51% ပဲရှိတော့မယ်။
+
+(we are calculating the probability of two keys being collide here)
 
 table size များလာလေလေ collision ဖြစ်နိုင်ချေနည်းနည်းလာလေပေါ့။ 32 bit မှာ key ပေါင်း 7 သောင်းကျော်ရှိရင် collision ဖြစ်နိင်ချေ 50% ရှိတယ်။ တွက်ကြည့်ချင်ရင် m=2^32, k=77163 လို့ထားပြီးတွက်ကြည့်လိုက်။ 64bit ဆိုရင်တော့collision ဖြစ်နိုင်ချေပိုနည်းသွားမယ်ပေါ့။ (Maximun array size က language တစ်ခုနဲ့တစ်ခု မတူဘူးထင်တယ်။ java မှာတော့ (Integer.MAX_VALUE-8), 2.1 billion ကျော်ပေါ့။ JVM ကအဲ့size ထက်ပိုပြီး array အတွက် memory allocate မလုပ်ပေးနိုင်ဘူး)။ Size ကြီးလာလေ key တွေ တစ်ခုနဲ့တစ်ခု collision ဖြစ်တာနည်းလာလေလေ လက်တွေ့မှာတော့ ဟုတ်ချင်မှဟုတ်လိမ့်မယ်။ ဒါပေမဲ့ အပေါ်ကတွက်ခဲ့သလိုမျိုးဆို collision rate ကနည်းပြီး constant time နဲ့ hashtable တွေက လုပ်ပေးနိုင်တယ်။ table doubling လည်းလုပ်တော့ 0.75 အတွက်ဆိုရင်အမြဲတန်း ဒသမဟုတ်တဲ့ ဂဏန်းလဲထုတ်ပေးတယ်။ ဥပမာ
 
