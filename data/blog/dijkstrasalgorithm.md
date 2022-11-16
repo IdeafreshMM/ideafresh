@@ -287,7 +287,6 @@ Edgeတွေကိုသွားပြီးတိုင်း PQ ကို up
 
 ဒီ case မှာကျတော့ ရိုးရိုး min heap သုံးကြည့်ပါမယ်<br/>
 heap sort အတွက် insert က logn<br/>
-extract min က logn လို့မှတ်ထားပေးပါ<br/>
 Node တိုင်းက သူ့ရဲ့ successor ကိုရှာတာက ပထမဆုံးတစ်လုံးကို pop ရုံပဲဆိုတော့ O(1)
 PQ ထဲထည့်ရင် logn<br/>
 ဒါပေမဲ့ PQ ကို update လုပ်ဖို့ဆို node ကိုပြန်ရှာရပါတယ်
