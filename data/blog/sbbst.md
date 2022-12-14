@@ -58,7 +58,7 @@ node တစ်ခုရဲ့ balance factor ကို left child ရဲ့ heig
 
 node တစ်ခုရဲ့ Height ကို လိုချင်ရင် left child height နဲ့ right child height ထဲက အကြီးဆုံးတစ်လုံးကိုယူပြီး 1 ပေါင်းရပါတယ်
 
-`height of a node = max(h(l)+h(r)) + 1`
+`height of a node = max(h(l),h(r)) + 1`
 
 node အသစ်တစ်ခုဝင်လာလို့ balance factor ပြောင်းသွားတိုင်း rotate လုပ်ရပါတယ်
 rotate လုပ်ပုံလုပ်နည်း လေးမျိုးရှိပါတယ်
@@ -324,7 +324,7 @@ array ရဲ့ တစ်ဝက်ကို index ထောက်ပြီး �
 target integer က အခု middle ထက်ငယ်ရင် middle ကို
 right လို့သတ်မှတ်ပြီး နောက်ထက် တစ်ဝက်ပြန်ပိုင်းပါတယ်
 အောက်က array မှာ လိုချင်တာက 3
-middle အခန်းထဲကကောင်က 5
+middle အခန်းထဲကကောင်က 5<br />
 5 က 3 ထက်ကြီးတော့ 5 ရဲ့နောက်ကကောင်တွေအကုန်လုံးက 3 ထက် ကြီးမှာပဲ
 sorted ဖြစ်ပြီးသားဆိုတော့လေ
 ဆိုတော့ သူ့နောက်က ကောင်တွေကို သွားပြီး ကြည့်စရာမလိုတော့ဘူး
