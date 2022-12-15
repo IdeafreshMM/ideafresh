@@ -5,7 +5,7 @@ date: 10/12/2022
 tags: ['data structure', 'hashtable', 'probability']
 lastmod: 10/13/2022
 draft: false
-summary: what is hashtable
+summary: A deep to hashtable
 authors: ['jerry']
 canonicalUrl: ideafresh.me/blog/hashtable
 ---
