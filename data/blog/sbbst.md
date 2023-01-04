@@ -269,7 +269,7 @@ N(h) > 2\*2\*2\* N(h-6)
 
 N(h) > 2 ^ h/2 ဆိုပြီး ဖြစ်သွားတယ်
 
-😁😁
+![Meme](/static/images/sbbst/mathmemecs.jpg)
 
 N(h) = n , number of node in the tree
 
