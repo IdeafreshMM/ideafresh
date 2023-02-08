@@ -15,7 +15,7 @@ Binary Search Tree ဆိုတာ binary tree အမျိုးအစားတ
 
 ![Complete Binary Tree](/static/images/sbbst/CompleteBinary.png)
 
-node တိုင်းရဲ့ left တွေက parent ထက်ငယ်ပြီး right တွေက parent ထက်ကြီးတယ်ပေါ့
+node တိုင်းရဲ့ left တွေက parent ထက်ငယ်ပြီး right တွေက parent ထက်ကြီးတယ်
 
 အပေါ်ကလို bst ကို complete bst လို့ခေါ်တယ်<br/>leave တွေအကုန်လုံးက level တစ်ခုထဲမှာပဲ ညီနေကြလို့ <br/>ဒီလို property ရှိတဲ့ BST ထဲမှာ node တစ်ခုခုကိုရှာချင်ရင် logn နဲ့ရှာလို့ရတယ်<br/>
 ပထမဆုံး root node ကစ,
@@ -51,12 +51,12 @@ node တစ်ခုရဲ့ balance factor ကို left child ရဲ့ heig
 
 `BF = h(l)- h(r)`
 
-node တစ်ခုရဲ့ Height ကို လိုချင်ရင် left child height နဲ့ right child height ထဲက အကြီးဆုံးတစ်လုံးကိုယူပြီး 1 ပေါင်းရပါတယ်
+node တစ်ခုရဲ့ Height ကို လိုချင်ရင် left child height နဲ့ right child height ထဲက အကြီးဆုံးတစ်လုံးကိုယူပြီး 1 ပေါင်းရတယ်
 
 `height of a node = max(h(l),h(r)) + 1`
 
-node အသစ်တစ်ခုဝင်လာလို့ balance factor ပြောင်းသွားတိုင်း rotate လုပ်ရပါတယ်
-rotate လုပ်ပုံလုပ်နည်း လေးမျိုးရှိပါတယ်
+node အသစ်တစ်ခုဝင်လာလို့ balance factor ပြောင်းသွားတိုင်း rotate လုပ်ရတယ်
+rotate လုပ်ပုံလုပ်နည်း လေးမျိုးရှိတယ်
 
 ---
 
@@ -66,7 +66,7 @@ rotate လုပ်ပုံလုပ်နည်း လေးမျိုးရ
 ![left tree](/static/images/sbbst/leftree.png)
 
 အပေါ်ပုံမှာ node 3 ရဲ့ balance factor က 2 ဖြစ်ပါတယ်
-left child ရဲ့ left child ထဲဝင်လာတာမလို့ သူ့ကို right rotation လုပ်ပေးရပါတယ်
+left child ရဲ့ left child ထဲဝင်လာတာမလို့ သူ့ကို right rotation လုပ်တယ်
 
 <br/>
 <br/>
@@ -226,6 +226,7 @@ public class AVLTree<T> {
 
 ### Time Complexity
 
+
 Worst case မှchild node တစ်ခုခုက တစ်ခြား node တစ်ခုထက် level 1 ခုပိုနေနိုင်တယ် ဘာဖြစ်လို့လဲဆို balance factor က 2 မှ rotate လုပ်လို့ပါ
 ဥပမာ node တိုင်းမှာ left child က right child ထက် level တစ်ခုပိုနေတာမျိုးပေါ့
 
@@ -309,14 +310,14 @@ public boolean linearsearch(int[] array,int targetElement){
 }
 ````
 
-linear search က အစကနေအဆုံးထိ ရှာရနိုင်တာမို့ worst case မှာ O(n) ကြာပါတယ်<br/>ဒါပေမဲ့ အခုက sorted ဖြစ်ပြီးသား array<br/>
+linear search က အစကနေအဆုံးထိ ရှာရနိုင်တာမို့ worst case မှာ O(n) ကြာတယ်<br/>ဒါပေမဲ့ အခုက sorted ဖြစ်ပြီးသား array<br/>
 Array က ramdom access ရတယ်<br/>
 သွားချင်တဲ့အခန်းကို index ထောက်ပြီးသွားလို့ရတယ်
 အဲ့တော့ binary search ကိုသုံးလို့ရတယ်ပေါ့
 binary search က ဘယ်လိုလဲဆို
-array ရဲ့ တစ်ဝက်ကို index ထောက်ပြီး ရှာမဲ့ int တန်ဖိုးချင်း နိူင်းယှည်ပါတယ်
+array ရဲ့ တစ်ဝက်ကို index ထောက်ပြီး ရှာမဲ့ int တန်ဖိုးချင်း နိူင်းယှည်တယ်
 target integer က အခု middle ထက်ငယ်ရင် middle ကို
-right လို့သတ်မှတ်ပြီး နောက်ထက် တစ်ဝက်ပြန်ပိုင်းပါတယ်
+right လို့သတ်မှတ်ပြီး နောက်ထက် တစ်ဝက်ပြန်ပိုင်းတယ်
 အပေါ်က array မှာ လိုချင်တာက 3
 middle အခန်းထဲကကောင်က 5<br />
 5 က 3 ထက်ကြီးတော့ 5 ရဲ့နောက်ကကောင်တွေအကုန်လုံးက 3 ထက် ကြီးမှာပဲ
