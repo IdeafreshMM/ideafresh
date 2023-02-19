@@ -40,12 +40,12 @@ array ထဲမှာပါတဲ့ element တိုင်းက 3 ကြိ�
 ```java:singleNumber.java
 
  public int singleNumber(int[] nums) {
-        int one=0,two=0,three=0;
+        int one=0,two=0;
 
         for(int i=0;i<nums.length;i++){
             one=(one^nums[i]) & ~two;
             two=(two^nums[i])& ~one;
-           // three= (three^nums[i]) & ~two;
+
         }
         return one;
     }
@@ -72,7 +72,7 @@ JAVA မှာ primitive data type အမျိုးမျိုးရှိတ
 
 ဒါကြောင့်မလို့ integer 10 ကို binary မှာဆိုအောက်ကလိုမျိုး represent လုပ်တယ်
 
-```:5
+```:10
 00000000 00000000 00000000 00001010
 ```
 
