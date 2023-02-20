@@ -100,7 +100,7 @@ unicode က ascii ရဲ့ super-set ဖြစ်တာမလို့ ASCII va
 
 JAVA မှာ string ကို array of character အနေနဲ့ သိမ်းပါတယ်
 "Hello World" ဆိုတဲ့ string ကို သိမ်းမယ်ဆိုရင် 22 byte ကုန်ပါတယ်
-unicode က လိုအပ်မှပဲ byte အပိုယူမှာဖြစ်လို့ english ကာရိုက်တာတွေအတွက် 2byte ပဲယူပြီး represent လုပ်မှာဖြစ်ပါတယ်
+unicode က english ကာရိုက်တာတွေအတွက် 2byte ယူပြီး represent လုပ်မှာဖြစ်ပါတယ်
 
 ဒီလောက်ဆို data တွေ binary အနေနဲ့ဘယ်လိုတွေ သိမ်းလဲသိလောက်ပါပြီ
 
