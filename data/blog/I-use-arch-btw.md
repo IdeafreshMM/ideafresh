@@ -5,7 +5,7 @@ date: 03/16/2023
 tags: ['article']
 lastmod: 03/16/2023
 draft: false
-summary: A 30 days habit building
+summary: Oh, and by the way, I use Arch Linux. This phrase is often used by Arch users as a way of showing off their technical skills and knowledge.
 authors: ['sai']
 canonicalUrl: ideafresh.me/blog/30-days-habit-building
 ---
