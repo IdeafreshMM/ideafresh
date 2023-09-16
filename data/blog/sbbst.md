@@ -5,7 +5,7 @@ date: 12/14/2022
 tags: ['data structure', 'avl', 'binary tree']
 lastmod: 12/15/2022
 draft: false
-summary: AVL Tree and it's worst case
+summary: AVL Tree and worst case
 authors: ['jerry']
 canonicalUrl: ideafresh.me/blog/sbbst
 ---

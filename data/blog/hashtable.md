@@ -2,10 +2,10 @@
 slug: hashtable
 title: HashTable
 date: 10/12/2022
-tags: ['data structure', 'hashtable', 'probability']
+tags: ['data-structure', 'hashtable', 'probability', 'hashing']
 lastmod: 10/13/2022
 draft: false
-summary: A deep to hashtable
+summary: A deep drive to hashtable
 authors: ['jerry']
 canonicalUrl: ideafresh.me/blog/hashtable
 ---

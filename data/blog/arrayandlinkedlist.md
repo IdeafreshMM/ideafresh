@@ -2,10 +2,10 @@
 slug: array-linkedlist
 title: Array and LinkedList
 date: 10/22/2022
-tags: ['array', 'linkedlist']
+tags: ['array', 'linkedlist', 'data-structure']
 lastmod: 11/10/2022
 draft: false
-summary: How Array and LinkedList Works?
+summary: What is array and linkedlist? Are they worth it?
 authors: ['jerry']
 canonicalUrl: ideafresh.me/blog/arrayandlinkedlist
 ---

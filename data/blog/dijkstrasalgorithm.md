@@ -5,7 +5,7 @@ date: 11/13/2022
 tags: ['algorithm', 'dijkstra', 'heap']
 lastmod: 11/13/2022
 draft: false
-summary: Dijkstra's Algorithm Implementation
+summary: Visualizing Dijkstra's Algorithm
 authors: ['jerry']
 canonicalUrl: ideafresh.me/blog/dijkstrsalgorithm
 ---
@@ -312,7 +312,6 @@ SBBST မသုံးပဲ binary heap နဲ့ဆို array ပေါ်မ
 ပြီးရင်သူက parent, children တွေ ကို access လုပ်တာဆိုလည်း formula သုံးလို့ရတယ်<br/>
 parent node ကိုလိုချင်ရင် i/2 သုံးလိုက်ရင်ရတယ်<br/>
 update လုပ်ပြီဆိုကတည်းက တန်ဖိုးကငယ်သွားတော့ parent ပေါ်ပဲတက်သွားမှာမလို့ပါ swap လုပ်ရင်<br/>
-(Honestly, I can't image how to make mapping for sbbst, heap one is kinda easy to see tho)
 
 `Voila` <br/>
 
