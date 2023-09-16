@@ -286,7 +286,6 @@ Binary search tree မှာ height က time complexity ပဲ
 သူ့ကို fibonnaci ပြောင်းပြီး အတိအကျ golden ratio နဲ့တွက်လို့ရပါသေးတယ်
 Worst case က 1.44logn ရတယ်ပေါ့
 
-ကျွန်တော်တော့နားမလည်တာနဲ့ မရေးတော့ပါဘူး
 
 [Download PDF](https://www.engr.mun.ca/~theo/Courses/dm/pub/dm-application5.pdf)
 

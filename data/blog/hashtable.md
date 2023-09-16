@@ -37,7 +37,7 @@ Integer value တွေပါတဲ့ array တစ်ခုကို လုံ
 
 ဒီတစ်ခုကြတော့ 3 က 2 ခုပါတဲ့အတွက်ကြောင့် ဒီ array က unique မဖြစ်ဘူး။ ဟုတ်ပြီ အဲ့ဒါဆို array က unique ဖြစ်လား မဖြစ်လား ဘယ်လိုစစ်မလဲ?
 
-### First Approach
+#### First Approach
 
 ```java:checkUnique.java
 public boolean checkUnique(int[] array) {
@@ -52,6 +52,8 @@ public boolean checkUnique(int[] array) {
 }
 
 ```
+
+<h4>sure, you can improve this program</h4>
 
 array ထဲကအခန်းတိုင်းကို loop နဲ့ပတ်သွားမယ်။ ရောက်သွားတဲ့အခန်းတိုင်းမှာ လုံးဝ unique ဖြစ်လားဆိုတာ array တစ်ခုလုံးနဲ့တိုက်စစ်တယ်။ နောက်ဆုံးတစ်လုံးပြီးသွားတဲ့အထိ unique ဆို ဒီ Array က လိုချင်တဲ့ array ။ ဒီ approach က လိုချင်တဲ့ result တော့ရတယ်။ ဒါပေမဲ့ Complexity ဘက်ကကြည့်ရင် n^2 ကြာတယ်။
 
@@ -120,7 +122,7 @@ public class SimplestHashTable {
 
 key 3 အတွက် value ပြန်လိုချင်ရင် key ကို hash function ထဲထည့်ပြီး ရလာတဲ့ index အတိုင်းပြန်သွားယူရုံပဲ။ ပြန်သွားယူတဲ့နေရာမှာ index ကိုတွက်လိုက်ရုံပဲဆိုတော့ သူက constant time နဲ့လုပ်ပေးနိုင်တာပေါ့။ ပြန်ယူတဲ့နေရာမှာ index တစ်လွဲတွေမထွက်ပေးအောင်လို့ hash function တွေက `deterministic` ဖြစ်ရမယ်။ ဆိုလိုတာက သုံးမဲ့ Hash function က ဝင်လာတဲ့Keyအတွက် အမြဲတမ်းတူညီတဲ့ index ကိုထုတ်ပေးရမယ်။ အဲ့ဒါဆိုရင်လောလောဆယ် hashtable ဆိုတာဘယ်လိုမျိုးလဲ သိလောက်ပြီပေါ့။ ရိုးရိုးလေးစဥ်းစားကြည့်ရင် hashtable ဆိုတာ key ကို index အဖြစ်ပြောင်းပြီး ရလာတဲ့ index ထဲ value ထဲထည့်လိုက်တာ။
 
-#### Collision
+#### `Collision`
 
 key = 3, value = val3
 
@@ -140,8 +142,9 @@ key = 11, value = val11
 
 `Open Addressing` ဆိုပြီး technique နှစ်ခုရှိတယ်။
 
-1. Closed Addressing
-   1. Seperate Chaining
+1.` Closed Addressing`
+
+1.  Seperate Chaining
 
 Collision တွေဖြစ်လာရင်သူက data structure တစ်ခုခုနဲ့ ချိတ်ပြီးသိမ်းသွားပေးတာပေါ့။ `Linked list` ကိုအဓိက ထားသုံးတယ်။ array ထဲကို linked list ထိပ်ရဲ့ reference ထည့်ထားပြီးတော့ collision ဖြစ်တဲ့ pair တွေကို linked list ရဲ့ သဘာဝအတိုင်း တစ်ခုနဲ့တစ်ခု next item ရဲ့ reference တွေနဲ့ချိတ်ပြီးသိမ်းသွားတာ။
 
@@ -151,14 +154,14 @@ key = 11, val = val11
 
 key = 19, val = val19
 
-> > Assume n is 8
+<h4>Let's assume n is 8 </h4>
 
 အပေါ်က Data တွေကိုထည့်သွားရင်
 
 array မှာ
 ![LinkedListHashTable](/static/images/fourthImage.png)
 
-(array ထဲကိုထည့်တဲ့နေရာမှာ value ချည်းမဟုတ်ပဲ key ကောပါရောထည့်ပေးထားတာကိုသတိပြုမိမယ်ထင်တယ်။ collision ဖြစ်လာတဲ့ Linked list တစ်လျှောက် key ညီတာချင်း စစ်ဖို့လိုမှာမလို့ပါ) ဒီလိုဆို collision ကိုတော့ဖြေရှင်းပြီးတော့ဖြစ်သွားတယ်။ ဒါပေမဲ့ worst case မှာက Search အတွက်ဆိုရင်လည်း Linked list အဆုံးထိသွားနိုင်ချေရှိတာမလို့ O(n) Insert လုပ်မယ်ဆိုလည်း key တူတာကို override လုပ်ဖို့ ပြန်ရှာရမှာဆိုတော့ O(n) (delete operation ကို ဒီtopic တစ်ခုလုံးမရေးပြထားပါဘူး ကိုယ်ဟာကိုပဲ လုပ်ကြည့်ကြပါ) time complexity မကောင်းဘူးပေါ့။ အဲ့တော့ chaining အတွက် ပိုကောင်းမယ်ထင်တဲ့ `Binary Search Tree` ကိုပြောင်းသုံးမယ်။ bst သုံးမယ်ဆို လိုက်နာရမဲ့ property တွေရှိတယ်။ left child သည် parent node ထက်ငယ်ရမယ်။ right child သည် parent node နဲ့ ညီ(သို့)ကြီး ရမယ်။
+(array ထဲကိုထည့်တဲ့နေရာမှာ value ချည်းမဟုတ်ပဲ key ကောပါရောထည့်ပေးထားတာကိုသတိပြုမိမယ်ထင်တယ်။ collision ဖြစ်လာတဲ့ Linked list တစ်လျှောက် key ညီတာချင်း စစ်ဖို့လိုမှာမလို့ပါ) ဒီလိုဆို collision ကိုတော့ဖြေရှင်းပြီးတော့ဖြစ်သွားတယ်။ ဒါပေမဲ့ worst case မှာက Search အတွက်ဆိုရင်လည်း Linked list အဆုံးထိသွားနိုင်ချေရှိတာမလို့ O(n) Insert လုပ်မယ်ဆိုလည်း key တူတာကို override လုပ်ဖို့ ပြန်ရှာရမှာဆိုတော့ O(n) (delete operation ကို ဒီtopic တစ်ခုလုံးမရေးပြထားပါဘူး ကိုယ်ဟာကိုပဲ လုပ်ကြည့်ကြပါ) time complexity မကောင်းဘူးပေါ့။ အဲ့တော့ chaining အတွက် ပိုကောင်းမယ်ထင်တဲ့ `Binary Search Tree` ကိုပြောင်းသုံးမယ်။ BST သုံးမယ်ဆို လိုက်နာရမဲ့ property တွေရှိတယ်။ left child သည် parent node ထက်ငယ်ရမယ်။ right child သည် parent node နဲ့ ညီ(သို့)ကြီး ရမယ်။
 
 key = 11, val = val11
 
@@ -170,7 +173,7 @@ key = 19, val = val19
 
 ![BSTHashTable](/static/images/fifthImage.png)
 
-array ခန်းထဲကို root node ကိုထည့်မှာ root node ကနေပြီးတော့ left နဲ့ right သွားဖို့ reference သို့ pointer ရှိမယ်။ key19 ရဲ့ val ကိုလိုချင်လာရင် လိုမှာက log(n) operation ဒီလိုမျိုးဖြစ်သွားတာကလည်း ကံကောင်းလို့ပါ။ ဝင်လာတဲ့ data ကြောင့် bst က balance ဖြစ်ပြီး ဘာoperation လုပ်လုပ် log(n)။ ဒါပေမဲ့လည်း worst case မှာ bst ကလည်း O(n) ပြန်ဖြစ်ဦးမှာပဲ။
+array ခန်းထဲကို root node ကိုထည့်မှာ root node ကနေပြီးတော့ left နဲ့ right သွားဖို့ reference သို့ pointer ရှိမယ်။ key19 ရဲ့ val ကိုလိုချင်လာရင် လိုမှာက log(n) operation ဒီလိုမျိုးဖြစ်သွားတာကလည်း ကံကောင်းလို့ပါ။ ဝင်လာတဲ့ data ကြောင့် BST က balance ဖြစ်ပြီး ဘာoperation လုပ်လုပ် log(n)။ ဒါပေမဲ့လည်း worst case မှာ BST ကလည်း O(n) ပြန်ဖြစ်ဦးမှာပဲ။
 
 ဆိုပါစို့ ခုနက data ကိုပဲ အောက်ကအစဥ်နဲ့ ထည့်မယ်ဆိုရင်
 
@@ -182,13 +185,13 @@ key = 19, val = val19
 
 ![BSTHashTable](/static/images/sixthImage.png)
 
-Bst က balance မဖြစ်တော့ဘူး။
+BST က balance မဖြစ်တော့ဘူး။
 
 key 19 နဲ့ val ကိုရှာချင်ရင် အောက်ဆုံးထိပြန်သွားရှာရမယ်ဆိုတော့ O(n)။ သူလည်း worst case မှာ time complexity မကောင်းသေးဘူး။ ဒါပေမဲ့ linked list ထက်စာရင် သူက တစ်ချို့ case မှာ ပိုမြန်နိုင်တယ်။ BST ရဲ့ property အတိုင်း အခု လက်ရှိ key နဲ့လိုချင်တဲ့ key နဲ့ ယှည်ပြီး left ဘက်မှာရှာရမလား right ဘက်ကိုရှာရမလား
 
 လိုချင်တဲ့ key ဆီ average case မှာ ပိုပြီးမြန်နိုင်တယ်။
 
-အောက်က link မှာ hashtable linked list သုံးတာရယ် normal bst သုံးတာရယ်ကိုရေးပေးထားတယ်။
+အောက်က link မှာ hashtable linked list သုံးတာရယ် normal BST သုံးတာရယ်ကိုရေးပေးထားတယ်။
 
 +++++++++++
 
@@ -425,21 +428,21 @@ class MyHashSet {
 
 ```
 
-bst မှာ worst case မဖြစ်အောင်ဆိုပြီး bst ကိုအဆင့်မြင့်ထားတဲ့ self balancing bst တွေနဲ့ပြောင်းသုံးမယ်။ self balancing bst ဆိုတာက worst case မှာ search, insert ဘာ operations လုပ်လုပ် O(logn) ပဲကြာတယ်။ `AVL tree`, `Red black tree` သုံးမလား တစ်ခြား self balancing tree တွေသုံးမလား ကြိုက်တာသုံးလို့ရတယ်။ Worst case မှာ O(logn) ပဲကြာမယ်။
+BST မှာ worst case မဖြစ်အောင်ဆိုပြီး BST ကိုအဆင့်မြင့်ထားတဲ့ Self Balancing BST တွေနဲ့ပြောင်းသုံးမယ်။ Self Balancing BST ဆိုတာက worst case မှာ search, insert ဘာ operations လုပ်လုပ် O(logn) ပဲကြာတယ်။ `AVL tree`, `Red black tree` သုံးမလား တစ်ခြား Self Balancing tree တွေသုံးမလား ကြိုက်တာသုံးလို့ရတယ်။ Worst case မှာ O(logn) ပဲကြာမယ်။
 
-sbbst တွေက implementation ကတော်တော်ရူပ်တယ်။ (နောက်post တွေမှာ sbbst တစ်ခုဖြစ်တဲ့ AVL tree အကြောင်းရေးပေးပါ့မယ်) sbbst တွေပါသုံးရဦးမယ်ဆိုရင် hashtableအစကတည်းမဆောက်ပဲ။ sbbst တစ်ခုဆောက်လိုက်မှာပေါ့။ O(logn) ဆိုတာတော်တော်ကိုမြန်နေပြီ မြင်အောင်ပြောရရင်
+SBBST တွေက implementation ကတော်တော်ရူပ်တယ်။ (နောက်post တွေမှာ SBBST တစ်ခုဖြစ်တဲ့ AVL tree အကြောင်းရေးပေးပါ့မယ်) SBBST တွေပါသုံးရဦးမယ်ဆိုရင် hashtable အစကတည်းမဆောက်ပဲ။ SBBST တစ်ခုဆောက်လိုက်မှာပေါ့။ O(logn) ဆိုတာတော်တော်ကိုမြန်နေပြီ မြင်အောင်ပြောရရင်
 
-### 2^31=2147483648 items ရှိတဲ့ sbbst တစ်ခုမှာတောင် search အတွက်ဆိုရင်တောင်worst case မှာ operation ပေါင်း 31 ကြိမ်ပဲလုပ်စရာလိုတယ်
+### 2^31 = 2147483648 (2.1 billion) items ရှိတဲ့ SBBST တစ်ခုမှာတောင် search အတွက်ဆိုရင်တောင် worst case မှာ operation ပေါင်း 31 ကြိမ်ပဲလုပ်စရာလိုတယ်
 
 (worst case depends on the tree, from 1.44log(n) to 2log(n)->AVL Tree)
 
-sbbst ဆိုတာ insert လုပ်ကတည်းကသေသေချာချာလေးဖြစ်အောင်ထည့်ရတာ right နဲ့ left ရဲ့ difference ကလည်း 1 နဲ့အောက်မှာရှိရမယ်။ အဲ့တော့ chaining အတွက် ကြိုက်တဲ့ data structure ကိုအဆင်ပြေသလို့သုံး။ admin အထင် red black tree ကပိုခက်တယ်။ node အများကြီးကိုင်ပြီးလုပ်ရတာ ဒါပေမဲ့လည်း bucket တစ်ခုထဲကို worst case ဝင်, ဝင်လာတဲ့ worst case ကလည်း bst မှာပါလာပြီး worst case ဖြစ်မယ်ဆိုတာကတော့ သိပ်တော့ဖြစ်နိုင်ချေမရှိပါဘူး။ အဲ့လောက်ဆို average case လောက်မှာ O(logn) လောက်နဲ့လုပ်ပေးနိုင်တယ်။
+SBBST ဆိုတာ insert လုပ်ကတည်းကသေသေချာချာလေးဖြစ်အောင်ထည့်ရတာ right နဲ့ left ရဲ့ difference ကလည်း 1 နဲ့အောက်မှာရှိရမယ်။ အဲ့တော့ chaining အတွက် ကြိုက်တဲ့ data structure ကိုအဆင်ပြေသလို့သုံး။ admin အထင် red black tree ကပိုခက်တယ်။ node အများကြီးကိုင်ပြီးလုပ်ရတာ ဒါပေမဲ့လည်း bucket တစ်ခုထဲကို worst case ဝင်, ဝင်လာတဲ့ worst case ကလည်း BST မှာပါလာပြီး worst case ဖြစ်မယ်ဆိုတာကတော့ သိပ်တော့ဖြစ်နိုင်ချေမရှိပါဘူး။ အဲ့လောက်ဆို average case လောက်မှာ O(logn) လောက်နဲ့လုပ်ပေးနိုင်တယ်။
 
 ---
 
-### Table Doubling
+### `Table Doubling`
 
-ခုနက code တွေ ဝင်ကြည့်ဖြစ်ရင် array size ကို parameter အနေနဲ့ ကြိုပြီးကြေညာထားတာသိမယ်ထင်တယ်။ array ရဲ့ ဖွဲ့စည်းပုံကိုက Memory ပေါ်မှာ အရင် allocate လုပ်ရတာဆိုတော့လေ။ dynamic မဖြစ်ဖူး dynamic ဖြစ်အောင် ကြေညာထားတဲ့ array size ရဲ့ 3/4 ရောက်ရင် အခု array ရဲ့ length 2ဆ ကိုယူပြီးဆောက်ထားတဲ့ array ထဲကိုပြောင်းထည့်လိုက်မယ်။ Table doubling လုပ်တာ။ python ရဲ့ list ကလည်းအဲ့တိုင်းပဲ implement လုပ်ပုံချင်းတော့ ကွဲနိုင်တယ် သဘောတရားကတော့ အဲ့တိုင်းပဲ။ 3/4 = (0.75) ကို load factor လို့ခေါ်တယ်။ အဲ့လိုမျိုး array အသစ်ထဲထည့်သွားတိုင်း array အဟောင်းထဲမှာရှိတဲ့key တွေကို အကုန် rehash ပြန်လုပ်ပြီး အသစ်ထဲထည့်ရမယ်။ rehash မလုပ်ပဲ ဒီတိုင်းထည့်သွားရင် ပြန်ထုတ်တဲ့အချိန်ကြရင် hash function မှာ mod arraySize ထားတော့ တစ်လွဲ index တွေထွက်ပေးရင် မှားကုန်မယ်။ လောက်ကတော့နားလည်မယ်ထင်ပါတယ်။ Rehash လုပ်တိုင်းထည့်ထားတဲ့ key အကုန်ပြန်တွက်ရမှာဆိုတော့ O(n) n = number of keys already added
+ခုနက code တွေ ဝင်ကြည့်ဖြစ်ရင် array size ကို parameter အနေနဲ့ ကြိုပြီးကြေညာထားတာသိမယ်ထင်တယ်။ array ရဲ့ ဖွဲ့စည်းပုံကိုက Memory ပေါ်မှာ အရင် allocate လုပ်ရတာဆိုတော့လေ။ dynamic မဖြစ်ဖူး dynamic ဖြစ်အောင် ကြေညာထားတဲ့ array size ရဲ့ 3/4 ရောက်ရင် အခု array ရဲ့ length 2ဆ ကိုယူပြီးဆောက်ထားတဲ့ array ထဲကိုပြောင်းထည့်လိုက်မယ်။ Table doubling လုပ်တာ။ python ရဲ့ list ကလည်းအဲ့တိုင်းပဲ implement လုပ်ပုံချင်းတော့ ကွဲနိုင်တယ် သဘောတရားကတော့ အဲ့တိုင်းပဲ။ 3/4 = (0.75) ကို load factor လို့ခေါ်တယ်။ အဲ့လိုမျိုး array အသစ်ထဲထည့်သွားတိုင်း array အဟောင်းထဲမှာရှိတဲ့key တွေကို အကုန် rehash ပြန်လုပ်ပြီး အသစ်ထဲထည့်ရမယ်။ rehash မလုပ်ပဲ ဒီတိုင်းထည့်သွားရင် ပြန်ထုတ်တဲ့အချိန်ကြရင် hash function မှာ mod arraySize ထားတော့ တစ်လွဲ index တွေထွက်ပေးရင် မှားကုန်မယ်။ နားလည်မယ်ထင်ပါတယ်။ Rehash လုပ်တိုင်းထည့်ထားတဲ့ key အကုန်ပြန်တွက်ရမှာဆိုတော့ O(n) n = number of keys already added
 
 > > Why doubling?
 
@@ -451,16 +454,16 @@ AP ပုံသေနည်းထဲထည့်တွက်ရင် total time
 
 ![GPSUM](/static/images/gpsum.jpg)
 
-Geometric series ရဲ့ Sn ထဲထည့်သွားရင်total time complexity က 2^log(n) -1 ဆိုပြီးထွက်လာမယ်။ အဲ့ဒါကိုရှင်းရင် n-1ရလိမ့်မယ်။ ဆိုတော့ O(n) (log ဘယ်လိုရလဲဆို 2>4>8>16 အဲ့လိုသွားတာမလို့ nရာက်သည်အထိ logn base 2 အကြိမ်ပဲ rehash လုပ်စရာလိုတယ်။ total က O(n) ဆိုတော့average each insertion အတွက်ဆိုရင် constant time လို့ယူလိုက်လို့ရပြီ။ ပြောစရာရှိလာပြီ Array 2 ဆလုပ်ကြည့်ထက်ထက် 3 ဆ 4 ဆ လုပ်ကြည့်တာကပိုမကောင်းဘူးလား။ ကောင်းပါတယ် Array size များလေလေ collision နည်းလေလေ reharsh လုပ်ရတာနည်းလေလေ။ ဒါပေမဲ့ ဝင်လာတဲ့ key က နည်းနေပြီး array ကိုတစ်အား ကြီးပြစ်ရင်လည်း space မှာ မလိုအပ်ဘဲcomplexity တစ်အားများသွားမယ် နေရာလွတ်တွေအများကြီးကျန်ကုန်မယ်။ ဆိုတော့ Table Doubling လောက်လုပ်တာကပိုအဆင်ပြေတယ်ပေါ့။ ခုက arrayပြည့်သွားမှ doubling လုပ်လိုက်တာ။ အဲ့တော့ load factorက 1 ဖြစ်သွားမယ်။
+Geometric series ရဲ့ Sn ထဲထည့်သွားရင်total time complexity က 2^log(n) -1 ဆိုပြီးထွက်လာမယ်။ အဲ့ဒါကိုရှင်းရင် n-1ရလိမ့်မယ်။ ဆိုတော့ O(n) ။ log ဘယ်လိုရလဲဆို 2>4>8>16 အဲ့လိုသွားတာမလို့ nရာက်သည်အထိ log(n) base 2 အကြိမ်ပဲ rehash လုပ်စရာလိုတယ်။ total က O(n) ဆိုတော့average each insertion အတွက်ဆိုရင် constant time လို့ယူလိုက်လို့ရပြီ။ ပြောစရာရှိလာပြီ Array 2 ဆလုပ်ကြည့်ထက်ထက် 3 ဆ 4 ဆ လုပ်ကြည့်တာကပိုမကောင်းဘူးလား။ ကောင်းပါတယ် Array size များလေလေ collision နည်းလေလေ reharsh လုပ်ရတာနည်းလေလေ။ ဒါပေမဲ့ ဝင်လာတဲ့ key က နည်းနေပြီး array ကိုတစ်အား ကြီးပြစ်ရင်လည်း space မှာ မလိုအပ်ဘဲ complexity တစ်အားများသွားမယ် နေရာလွတ်တွေအများကြီးကျန်ကုန်မယ်။ ဆိုတော့ Table Doubling လောက်လုပ်တာကပိုအဆင်ပြေတယ်ပေါ့။ ခုက arrayပြည့်သွားမှ doubling လုပ်လိုက်တာ။ အဲ့တော့ load factorက 1 ဖြစ်သွားမယ်။
 
-### Java HasMmap
+### `Java HasMmap`
 
 java မှာကျတော့ load factor ကို 0.75 ဆိုပြီးထားတယ်။ ဝင်လာတဲ့ pair တွေ array size ရဲ့ 3/4 ရောက်လာရင် doubling လုပ်လိုက်တာ။ initial capacity(aka initial array size) ကို 8 လို့ထားတယ်။ bucket(aka each array room) အတွက် item ဝင်နိုင်ခြေရှိတဲ့ probaility ကဘယ်လောက်လဲ။ array ကို 0.75 load factor ရောက်တိုင်း 2ဆလုပ်လိုက်တယ် <br />
 Java မှာ bucket ထဲ ဝင်နိုင်ခြေရှိတဲ့ probability load ကို 0.5 လို့ထားတယ်။ ဘယ်လိုရလာတာလဲ?
 
 ဥပမာ size 16 ရှိတဲ့ array ကို 13 ခုမြောက် pair ဝင်လာတာနဲ့ size ကို 32 ထားလိုက်တယ်။ အဲ့မှာကျန်တဲ့ bucket ပေါင်းက 20/32=0.625၊ ယူပြီးသားက 12/32=0.375၊ အဲ့ကျတော့ table doubling လုပ်တိုင်း 0.375 load ကနေရာယူပြီးသား ၊အဲ့တော့ average load ကို 0.365 နဲ့ 0.75 ကြားကယူလိုက်ရင် 0.5625 ရမယ်။ ဒီaverage load ယူဆတာက တစ်ခြားနည်းဟန်နဲ့ယူဆတာတွေလဲဖြစ်နိုင်တယ်။ ကျွန်တော်လည်းသိပ်မကွဲဘူး။ stackflow မှာသွားမေးတော့လည်း ဒီတိုင်းပဲဖြေပြထားတယ်။
 
-[Why bucket emptyness 0.5 ?](https://stackoverflow.com/questions/72526389/how-do-we-get-the-probability-of-bucket-being-empty-or-not-is-0-5-in-hash-map/72553238#72553238)
+[Check Here : Why bucket emptyness 0.5 ?](https://stackoverflow.com/questions/72526389/how-do-we-get-the-probability-of-bucket-being-empty-or-not-is-0-5-in-hash-map/72553238#72553238)
 
 အဲ့တာက လွတ်နေတဲ့ bucket ထဲဝင်လာနိုင်ချေရှိတဲ့ probability.
 java document အရ user ဘက်ကနေ worst case လိုက်မထည့်ဘူး။ hash function ကနေပြီးတော့လည်း ဝင်လာတဲ့ key ကို random ဖြစ်အောင်ပြောင်းနိုင်မယ်ဆိုရင် `Poisson Distribution` ကို လိုက်နာတယ်။ key တွေကတစ်ခုနဲ့တစ်ခု independent တော့ဖြစ်ရမယ်။ poisson distrubution ဆိုရင် mean သိဖို့လိုလာပြီ။ mean က ခုနကတိုင်းဆိုရင် 0.5 formula ထဲထညိ့တွက်ရင်
@@ -477,17 +480,17 @@ Pr(x=1)=0.5^1e^-0.5/1!=0.30326532985=30%
 
 Pr(x=2)=0.5^2e^-0.5/2!=0.07581633=7%
 
-အဲ့တိုင်းတွက်သွားမယ်ဆိုရင် bucket ထဲကို key တွေ5 ခုလောက် ဝင်လာနိုင်ချေက 0.00015795=0.015795 %ပဲရှိတယ်။ နောက်ထက် key တွေဆက်ဝင်လာနိုင်ချေက နည်းနည်းသွားတယ်။ key 9 ခုလောက်same bucket ထဲဝင်နိုင်ချေက ten million ပုံ တစ်ပုံပဲရှိတယ်။ အဲ့ကျတော့ Randomized ဖြစ်မယ်ဆိုရင် key တွေက bucket တွေအကုန်လုံးဆီကို nicely distributed ဖြစ်ပြီး expected average case မှာ O(1) ရမယ်။ ဆိုတော့ theory အရ hashmap က constant timeရတယ်။ ဒါပေမဲ့လည်းworst case မှာ O(n) ပဲ။ key တွေအကုန်လုံး bucket တစ်ခုထဲအကုန်ဝင်သွားနိုင်တာကိုး။ probability ဆိုတဲ့သဘောက real world မှာဖြစ်ချင်မှဖြစ်တာ။ ဥပမာ ခေါင်းပန်း နှစ်ကြိမ်လှည့်ရင် probability အရ ခေါင်းတစ်ခါ ပန်းတစ်ခါ ကျတယ်ဆိုပေမဲ့ အပြင်မှာ အဲ့လိုပုံသေဖြစ်လေ့မရှိပါဘူး။  probability က dataset ကြီးလာမှပဲ မှန်လေ့ရှိပါတယ်။ (ကျွန်တော်လည်း math major မဟုတ်တော့ probability မရဘူး)။ java ကတော့ Bucket size (bucket တစ်ခုထဲဝင်လာတဲ့ key အရေအတွက်) 64 ခုရောက်တာနဲ့ self balancing tree အဖြစ်ပြောင်းလိုက်တယ်။ အာ့ကြတော့ worst case O(logn) ပဲကြာမယ်။ ခုနကပြောသလိုပဲ sbbstက implement ရတာရူပ်တယ် java ကတော့ treemap သုံးတယ်။ treemap က red black tree နဲ့ဆောက်ထားတယ်။ ဆိုတော့ java hashmap အတွက် Time Complexity တွက်မယ်ဆိုရင် Search အတွက် average case-O(1) worst case ဆို O(logn)။ treeifyပြန်ပြောင်းတာကနောက်ပိုင်းမှ jdk တွေမှ။ အရင်ကကဆို treeify မလုပ်တော့ worst case မှာ O(n)။ ဟုတ်ပြီ poission distribution မသုံးကြည့်ပဲ တစ်ခြား approach နဲ့randomized ဖြစ်နေတဲ့ key ချည်းအတွက်ပဲ collision ဖြစ်နိင်ချေရှိတဲ့ case ကိုသပ်သပ်တွက်ကြည့်မယ်။
+အဲ့တိုင်းတွက်သွားမယ်ဆိုရင် bucket ထဲကို key တွေ5 ခုလောက် ဝင်လာနိုင်ချေက 0.00015795=0.015795 %ပဲရှိတယ်။ နောက်ထက် key တွေဆက်ဝင်လာနိုင်ချေက နည်းနည်းသွားတယ်။ key 9 ခုလောက်same bucket ထဲဝင်နိုင်ချေက ten million ပုံ တစ်ပုံပဲရှိတယ်။ အဲ့ကျတော့ Randomized ဖြစ်မယ်ဆိုရင် key တွေက bucket တွေအကုန်လုံးဆီကို nicely distributed ဖြစ်ပြီး expected average case မှာ O(1) ရမယ်။ ဆိုတော့ theory အရ hashmap က constant timeရတယ်။ ဒါပေမဲ့လည်းworst case မှာ O(n) ပဲ။ key တွေအကုန်လုံး bucket တစ်ခုထဲအကုန်ဝင်သွားနိုင်တာကိုး။ probability ဆိုတဲ့သဘောက real world မှာဖြစ်ချင်မှဖြစ်တာ။ ဥပမာ ခေါင်းပန်း နှစ်ကြိမ်လှည့်ရင် probability အရ ခေါင်းတစ်ခါ ပန်းတစ်ခါ ကျတယ်ဆိုပေမဲ့ အပြင်မှာ အဲ့လိုပုံသေဖြစ်လေ့မရှိပါဘူး။  probability က dataset ကြီးလာမှပဲ မှန်လေ့ရှိပါတယ်။ (ကျွန်တော်လည်း math major မဟုတ်တော့ probability မရဘူး)။ java ကတော့ Bucket size (bucket တစ်ခုထဲဝင်လာတဲ့ key အရေအတွက်) 64 ခုရောက်တာနဲ့ self balancing tree အဖြစ်ပြောင်းလိုက်တယ်။ အာ့ကြတော့ worst case O(logn) ပဲကြာမယ်။ ခုနကပြောသလိုပဲ SBBST implement ရတာရူပ်တယ် java ကတော့ treemap သုံးတယ်။ treemap က red black tree နဲ့ဆောက်ထားတယ်။ ဆိုတော့ java hashmap အတွက် Time Complexity တွက်မယ်ဆိုရင် Search အတွက် average case-O(1) worst case ဆို O(logn)။ treeifyပြန်ပြောင်းတာကနောက်ပိုင်းမှ jdk တွေမှ။ အရင်ကကဆို treeify မလုပ်တော့ worst case မှာ O(n)။ ဟုတ်ပြီ poission distribution မသုံးကြည့်ပဲ တစ်ခြား approach နဲ့randomized ဖြစ်နေတဲ့ key ချည်းအတွက်ပဲ collision ဖြစ်နိင်ချေရှိတဲ့ case ကိုသပ်သပ်တွက်ကြည့်မယ်။
 
-### Birthday paradox
+### `Birthday paradox`
 
 ရက်ပေါင်း 365 ရှိတဲ့ထဲမှာ လူပေါင်း 23 ယောက်ရှိရင်same birthdayရှိနိုင်ချေ 50% ရှိတယ်။ ဘယ်လိုတွက်သွားတာလဲဆိုရင် မတူနိုင်ချေရှိတာကိုအရင်ရှာ ပြီးရင် 1 ထဲကနုတ် အာ့ဆိုကျန်တာက တူနိုင်ချေရှိတာပေါ့။ အခုလည်းအာ့လိုပဲ collision ဖြစ်နိုင်တာကိုအရင်ရှာမယ်ပေါ့။
 
 m = size of array(table size)
 
-k အရေအတွက် key collision မဖြစ်နိုင်တဲ့ probability = (m/m)x(m-1/m)x(m-2/m).......x(m-(k-1)/m)
+k အရေအတွက် key collision မဖြစ်နိုင်တဲ့ probability = (m/m) x (m-1/m) x (m-2/m).......x (m-(k-1)/m)
 
-ပထမတစ်လုံးက လုံးဝ unique၊ ဒုတိယတစ်လုံးကျရင် အရင်ကတစ်လုံးနဲ့မတူတဲ့ pr ဆို 1နုတ်၊ ဒီSeries ဘယ်လိုရလာလဲတော့သိမယ်ထင်တယ်။ အဲ့ series အရှည်ကြီးကို k အစားထိုးတွက်နေရင် အဆင်မပြေဘူး။ ဒါပေမဲ့ သူ့ကို taylor expansion of e ပြောင်းလိုက်လို့ရတယ်။ ဘယ်လိုဖြစ်သွားတာလဲတော့ ကျွန်တော်လည်း math ဆိုတာ အပေါင်းအနုတ်လောက်ဘဲ သိတာမလို့ မပြောပြတတ်ဘူး😁😁 (skillတွေ🤣)
+ပထမတစ်လုံးက လုံးဝ unique၊ ဒုတိယတစ်လုံးကျရင် အရင်ကတစ်လုံးနဲ့မတူတဲ့ pr ဆို 1နုတ်၊ ဒီSeries ဘယ်လိုရလာလဲတော့သိမယ်ထင်တယ်။ အဲ့ series အရှည်ကြီးကို k အစားထိုးတွက်နေရင် အဆင်မပြေဘူး။ ဒါပေမဲ့ သူ့ကို taylor expansion of e ပြောင်းလိုက်လို့ရတယ်။
 
 `p'(k)≈ e^-k(k-1)/2m`
 
@@ -518,11 +521,11 @@ load factor ကို တစ်အားငယ်ငယ်ယူလိုက်�
 
 `ပထမဆုံးproblem မှာသုံးတာက hashset ပေါ့ သူက value တစ်ခုပဲ parameter နဲ့လက်ခံတယ်ပေါ့ ဒါဆို key မပါပဲနဲ့ဘယ်လိုသိမ်းသွားလဲဆိုတာ ကိုယ့်ဟာကိုစဥ်းစားလို့ရလောက်ပါပြီ`
 
-### Open Addressing
+### `Open Addressing`
 
 Open Addressing က collision ဖြစ်လာရင် အရင်က value တွေလည်းမပျောက်ချင်ဘူး။ chaining လိုမျိုးလည်း နောက်ထပ်အပို datastructure တွေထပ်မထည့်ချင်ဘူး။ ဒီ array ထဲပဲထည့်သိမ်းသွားတာချင်တာ။hash function ကနေပြီးတော့ ရှိပြီးသားအခန်းကိုပဲ ပြန်ညွှန်နေရင် နောက် hash function တစ်ခုပြန်သုံးပြီး အခန်းလွတ်ပြန်ရှာတယ် မတွေ့မချင်း အဲ့တော့ စဥ်းစားကြည့်ရင် လက်ခံမဲ့ Array size က အမြဲတမ်း ထည့်မဲ့ key အရေအတွက်ထက် ပိုများဖို့(သို့)ညီ ဖို့လိုကိုလိုတယ်။ မဟုတ်ရင် အခန်းလွတ်မတွေ့တော့ဘဲ infinite loop ဖြစ်ပြီး ပျက်သွားမယ်။
 
-### Linear Probing
+### `Linear Probing`
 
 နာမည်အတိုင်းပဲ linear function ကိုသုံးပြီးတော့ index ကိုရှာတယ်ပေါ့။ collision ဖြစ်ရင် index ကိုပြန်တွက်တယ် နေရာလွတ်မတွေ့မချင်း
 
@@ -552,18 +555,20 @@ key = 2, val = val2
 အဲ့တော့ trial count 1 တိုး
 
 f(13, 1) = 3+1 = 4 mod 10 = 4
-index 4 ကလွတ်တယ် အဲ့ထဲထည့်လိုက်မယ်။ ဒါပေမဲ့ sequence ရှာတဲ့နေရာမှာ infinite loop နိုင်တယ်။ ဘယ်လိုမျိုးလဲဆို trial count ဘယ်လောက်တိုးတိုးသွားသူက အခန်းလွတ်ထဲမရောက်ဘဲ ရှိပြီးသားအခန်းတွေထဲပဲပြန်ရောက်တာ။ အဲ့တော့ loop က infinite ဖြစ်ပြီး error တက်တယ်။ အဲ့လိုမဖြစ်ဖို့ဆိုရင် trial count နဲ့မြောက်မဲ့ c နဲ့ array size က relatively prime (c and array size must not share the same factor) မှရမယ်ပေါ့။ (m က လည်း even ,c ကလည်း even ဆို odd index တွေ ကျန်ကုန်မယ်)။ အဲ့တော့ c သို့ array size ရဲ့အနီးဆုံး prime ဘယ်လိုရှာမလဲ။ တစ်တိုးတိုးသွားပြီး prime ရှာလို့လဲရတယ်။ သူက time complexity မကောင်းဘူးပေါ့။ prime ရှာတဲ့ [Sieve of eratosthnees](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) ကိုသုံးပြီးရှာမယ်ဆို ပိုကောင်းတယ်။ ဟုတ်ပြီ အခန်းလွတ်တွေ့မယ်။ ဘယ်နှစ်ကြိမ်လောက်ကြိုးစားရမလဲ?
+index 4 ကလွတ်တယ် အဲ့ထဲထည့်လိုက်မယ်။ ဒါပေမဲ့ sequence ရှာတဲ့နေရာမှာ infinite loop နိုင်တယ်။ ဘယ်လိုမျိုးလဲဆို trial count ဘယ်လောက်တိုးတိုးသွားသူက အခန်းလွတ်ထဲမရောက်ဘဲ ရှိပြီးသားအခန်းတွေထဲပဲပြန်ရောက်တာ။ အဲ့တော့ loop က infinite ဖြစ်ပြီး error တက်တယ်။ အဲ့လိုမဖြစ်ဖို့ဆိုရင် trial count နဲ့မြောက်မဲ့ c နဲ့ array size က relatively prime (c and array size must not share the same factor) မှရမယ်ပေါ့။ (m က လည်း even ,c ကလည်း even ဆို odd index တွေ ကျန်ကုန်မယ်)။သူက time complexity မကောင်းဘူးပေါ့။ ဟုတ်ပြီ အခန်းလွတ်တွေ့မယ်။ ဘယ်နှစ်ကြိမ်လောက်ကြိုးစားရမလဲ?
 
 m=size of array
 n=number of keys
 
-လို့ထားပြီးProbability တွက်ရင် အခန်းလွတ်တွေက m-n။ အံ့ထဲကို hit နိုင်ချေရှိတာက (m-n)/m ပေါ့။ ပထမတစ်ခေါက်ကြိုးစားလို့ အခန်းလွတ်တွေ့နိုင်ချေက m-n/m မတွေ့လို့ဆိုရင်နောက်တစ်ခေါက်ပြန်လုပ် (m-n)/m-1 (m-1 ဖြစ်သွားတာက trial count တိုးသွားတာနဲ့ ခုနက unsucessful ဖြစ်သွားတဲ့အခန်းတွေကို ပြန်သွားစရာမလိုတော့လို့ပါ) အကြိမ်ရေများများလာတာနဲ့အမျှ အခန်းလွတ်တွေနိုင်ချေပိုများလာတယ်။ success ဖြစ်ဖို့ဆိုရင် expect number of trial က `1/p` p ကို m-n/m လို့ယူဆလိုက်ရင် (worst case)
+လို့ထားပြီးProbability တွက်ရင် အခန်းလွတ်တွေက m-n။ အံ့ထဲကို hit နိုင်ချေရှိတာက (m-n)/m ပေါ့။ ပထမတစ်ခေါက်ကြိုးစားလို့ အခန်းလွတ်တွေ့နိုင်ချေက m-n/m မတွေ့လို့ဆိုရင်နောက်တစ်ခေါက်ပြန်လုပ် (m-n)/m-1 (m-1 ဖြစ်သွားတာက trial count တိုးသွားတာနဲ့ ခုနက unsucessful ဖြစ်သွားတဲ့အခန်းတွေကို ပြန်သွားစရာမလိုတော့လို့ပါ) အကြိမ်ရေများများလာတာနဲ့အမျှ အခန်းလွတ်တွေနိုင်ချေပိုများလာတယ်။ success ဖြစ်ဖို့ဆိုရင် expect number of trial က `1/p` p ကို m-n/m လို့ယူဆလိုက်ရင်
 
 (m-n)/m =1-n/m ၊ n/m က load factor
 
+(m-n)/m = worst case
+
 ဆိုတော့ insert လုပ်မယ်ဆို expected average case က O(1/1-load factor)ပေါ့။ (load factor ကို ပုံမှန်တော့ alpha နဲ့ပြလေ့ရှိတယ်)။
 
-### Clustering
+### `Clustering`
 
 same index တွေနဲ့ collision ဖြစ်လာရင် ပြန်ရှာရတယ်။ မတွေ့မချင်း အဲ့လိုcollision ဖြစ်တာတွေများလာရင် အဲ့ sequence ကရှည်လာတယ်။ အဲ့လိုအစုကြီးဖြစ်လာတာကို cluster ဖြစ်လာတယ်လို့ခေါ်တယ်။ clusterကြီးလာလေလေ performance က ကျလာလေလေ။ နောက်ပြီး same index မဟုတ်လဲ sequence တူတာနဲ့ cluster က ပိုrange ကျယ်သွားတယ်။ c ပေါ်မူတည်ပြီး sequence ကဖြစ်လာတာဆိုတော့လေ။ ဥပမာ c = 2 , h(key1) = 3 ဆိုရင် သူသွားမဲ့ sequence က 3, 5, 7, 9 နောက် key 2 အတွက် hash function ကနေပြီးတော့ h(key2 )= 5 လို့ထုတ်ပေးရင် သူသွားမှာက 5, 7, 9။ 5 ကစပြီး cluster range ကိုပဲကျယ်ပေးလိုက်တယ်ပေါ့။ မူရင်း hash index တွေမတူတာတောင်
 
@@ -571,7 +576,7 @@ same index တွေနဲ့ collision ဖြစ်လာရင် ပြန်
 
 ဖြစ်သွားတယ်လို့ဆိုတယ်။
 
-### Quadratic Probing
+### `Quadratic Probing`
 
 Quadratic function တွေက
 
@@ -586,14 +591,14 @@ linear မှာတုန်းက non-empty ဖြစ်တဲ့ index ကိ�
 h(key1) = 30
 h(key2) = 29 လို့ယူဆကြည့်မယ်။ သွားမဲ့ sequence က key1 အတွက် 30,31,34,39 အဲ့လိုသွားရင်key2 က 29 ,30 ,33 , 38
 
-> > +(1,4,9,...)
+--> +(1,4,9,...)
 
 linear probing မှာဆို 31 ကနေပြီးတော့ sequence တူသွားမှာပေမဲ့ quadratic ကျတော့ sequence မတူတော့ cluster မကြီးတော့ဘူး။ အဲ့လို quadratic က ကြီးကြီးပြီးသွားတော့ array မှာတစ်ချို့အခန်းတွေက လွတ်ပြီးကျန်ခဲ့တယ်။ ဥပမာ arraySize = 3 မှာ hash လိုက်တာက 0 ဆိုရင် 0 နဲ့ 1 ကိုပဲသွားတယ်။ 2 အခန်းကိုဘယ်တော့မှမသွားဘူး။ သွားမဲ့ အခန်းတွေကလည်းယူပြီးသားဆိုရင် infinite loop တယ်။ အဲ့တော့ quadratic ကနေပြီးတော့ အခန်းတွေများများသွားအောင်ဆိုပြီးလုပ်ကြမယ်။
 
 1. array size က prime ဖြစ်မယ်။ function က trial^2 သူ့ကိုသုံးရင် အနည်းဆုံး အခန်းတစ်ဝက်ကို sequence ကပတ် ပေးတယ်။ အဲ့တော့ load factor တစ်ဝက်(0.5)လောက်ဆိုတစ်ခါ resize လုပ်ပေးသင့်တယ်။
 2. array size ကိုchaining လိုပဲ double resizingသွားရင် သုံးပေးရမဲ့ function က (trial^2+trial)/2 သူကိုသုံးမယ်ဆို အခန်းတွေအကုန်လုံး sequence ကရောက်မယ်။ ပိုမိုက်တယ်ပေါ့။
 
-### Double Hashing
+### `Double Hashing`
 
 quadratic မှာက cluster က range ကျည်းသွားတယ်။ ဒါပေမဲ့ function ကနေပြီးတော့ same index ထုတ်ပေးရင် cluster က ကြီးလာမယ်။ (linear မှာကျတော့ same index မထုတ်ပေးလဲ သူရဲ့ sequence ထဲ ဝင်သွားတာနဲ့ range ကကြီးသွားတာ သူ့ကို primary clustering လို့ခေါ်တယ်။ quadratic မှာဖြစ်တာကြတော့ secondary clusteringပေါ့)။ အဲ့လို cluster တွေဖြစ်တာကို double hashing မှာ constant sequence မလုပ်ပဲ နောက် hash function တစ်ခုကိုခေါပြီး ဘယ်လို follow လုပ်ရမလဲဆိုပြီး ဆုံးဖြတ်ခိုင်းတာပေါ့။ ဒုတိယ hash function ကနေထွက်လာတဲ့ index ကို linear probing ထဲက c အဖြစ်သတ်မှတ်ပြီး sequence ထုတ်တယ်။
 
@@ -603,14 +608,14 @@ f(key, trialcount) = trialcount x h2(key)
 
 ++++++++++++++
 
-# Hashing Technique
+# `Hashing Technique`
 
-### 1. Division Hashing
+### 1. `Division Hashing`
 
 h(k)=k mod m
-ဥပမာပေးရလွယ်တဲ့ hash function ပါ။ သူကအားနည်းချက်ရှိပါတယ်။။ key အတော်မဝင်ရင် even ဖြစ်ဖြစ် odd ဖြစ်ဖြစ်တွေချည်းပဲဝင်ပြီး အခန်းတွေလွတ်ကုန်မယ်။ (key က even , m ကလည်း even ဆို mod ရင် အမြဲ even တွေပဲထုတ်ပြီး odd index တွေကျန်မှာ)။ အဲ့တော့ m ကို 2^something လုပ်ထားရင် သူ့ရဲ့ nearest prime ကိုရှာပေးရမယ်။
+ဥပမာပေးရလွယ်တဲ့ hash function ပါ။ သူကအားနည်းချက်ရှိပါတယ်။။ key အတော်မဝင်ရင် even ဖြစ်ဖြစ် odd ဖြစ်ဖြစ်တွေချည်းပဲဝင်ပြီး အခန်းတွေလွတ်ကုန်မယ်။အဲ့တော့ m ကို 2^something လုပ်ထားရင် သူ့ရဲ့ nearest prime ကိုရှာပေးရမယ်။
 
-### 2. Universal Hashing`
+### 2. `Universal Hashing`
 
 h(k)=((ak+b) mod p)mod m
 
@@ -622,7 +627,7 @@ b is random integer(between 0 and p-1)
 
 random ဖြစ်ရင် probability theory တွေအရ collision နည်းမယ် bucket တွေအကုန်လုံးဆီ evenly distributed ဖြစ် သွားမယ်။ collision ဖြစ်နိုင်ချေ 1/arraySize ပဲရှိမယ်။
 
-### 3. Multiplicative Hashing
+### 3.` Multiplicative Hashing`
 
 h(k)=[ak mod 2^w] >> (w-r)
 a =random integer
@@ -630,7 +635,7 @@ k has w bits
 m=2^r
 k ရဲ့ copy တွေcollide အဖြစ်ဆုံး နေရာက bit တွေကိုယူပြီး hash လုပ်ထားတာ
 
-`သူတို့ကိုအရှည်ရှင်းထားတာကို အောက်က Youtube video တွေမှာ ကြည့်လို့ရပါတယ်`
+`Hashing functionအကြောင်း အကျယ်ရှင်းထားတာကို အောက်က Youtube video တွေမှာ ကြည့်လို့ရပါတယ်`
 
 [https://youtu.be/0M_kIqhwbFo](https://youtu.be/0M_kIqhwbFo)
 
@@ -638,6 +643,6 @@ k ရဲ့ copy တွေcollide အဖြစ်ဆုံး နေရာက bi
 
 That's it. အစအဆုံးဖတ်ပြီးသွားရင် နားမလည်တောင် ခေါင်းကိုက်သွားလောက်မှာပါ
 
-### Thank you for reading
+### Thank you for reading to the end
 
-စာကတစ်အားရှည်သွားပြီး တစ်ယောက်ထဲ fact checkထားရတော့ ကျော်သွားတာတွေ မှားနေတာတွေရှိနိုင်ပါတယ်။ အဲ့လိုမျိုးဆို page cb မှာ လာပြောလို့ရပါတယ်။
+<p>Last Edited : Sep/16/23</p>
