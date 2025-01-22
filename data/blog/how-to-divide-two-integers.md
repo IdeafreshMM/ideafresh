@@ -31,8 +31,7 @@ divisor က 1 လိုမျိုး အတော်ငယ်ပြီး divi
 
 ### အဲ့ Integer ကို ၂ နဲ့မြောက်တာနဲ့ညီစေပါတယ်
 
-(Let's ignore overflow case here) :3  
-we can ignore if we are writing in js since it will be using 64 bit for default
+(Let's ignore overflow case here) :3
 
 ဥပမာ 3 ကို 1 နေရာ LEFT SHIFT ရွှေ့တာသည် 3 ကို 2 နဲ့မြောက်တာနဲ့တူတူပါပဲ
 
