@@ -79,7 +79,7 @@ Doubly Linked List ဆိုပြီးရှိတယ်
 
 Singly Linked List မှာကြတော့ node တိုင်းကနောက် node တစ်ခုရဲ့ reference ကိုပဲသိမ်းတယ်
 
-![SinglyLinkedList](/static/images/lineards/l.PNG)
+![SinglyLinkedList](/static/images/lineards/sll.png)
 
 node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
 node တစ်ခုနောက်မှာ နောက်တစ်ခုရှိမယ်
