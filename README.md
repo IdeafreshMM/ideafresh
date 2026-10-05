@@ -44,8 +44,7 @@ Set these build environment variables for production and preview:
 - The `NEXT_PUBLIC_GISCUS_*` values listed in `.env.example`, if using comments.
 
 `NEXT_PUBLIC_*` variables are embedded at build time; changes require a new build.
-The repository currently tracks `.env`; ensure it contains no private credentials
-before pushing. Store any server-side secrets in Cloudflare, not in Git.
+`.env` is ignored by Git. Store any server-side secrets in Cloudflare, not in Git.
 Keep `pnpm-lock.yaml`, `pnpm-workspace.yaml`, and `patches/` committed so the build
 uses the same dependencies and citation fix. No Next.js Cloudflare adapter is needed.
 
