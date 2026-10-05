@@ -3,3 +3,7 @@ allowBuilds:
   deasync: true
   esbuild: true
   sharp: true
+  unrs-resolver: true
+  workerd: true
+patchedDependencies:
+  rehype-citation@2.3.2: patches/rehype-citation@2.3.2.patch

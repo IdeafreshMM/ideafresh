@@ -18,7 +18,7 @@ const siteMetadata = {
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
-    // content security policy in the `next.config.js` file.
+    // content security policy in the `public/_headers` file.
     // supports plausible, simpleAnalytics, umami or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
@@ -27,12 +27,12 @@ const siteMetadata = {
   },
   newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo, revue
-    // Please add your .env file and modify it according to your selection
+    // Static hosting requires a Pages Function or external backend before enabling signup.
     provider: '',
   },
   comment: {
     // If you want to use a commenting system other than giscus you have to add it to the
-    // content security policy in the `next.config.js` file.
+    // content security policy in the `public/_headers` file.
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
     provider: 'giscus', // supported providers: giscus, utterances, disqus
