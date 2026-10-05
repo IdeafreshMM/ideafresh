@@ -1,6 +1,4 @@
-import fs from 'fs'
 import PageTitle from '@/components/PageTitle'
-import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
 
@@ -31,17 +29,11 @@ export async function getStaticProps({ params }) {
   })
   const authorDetails = await Promise.all(authorPromise)
 
-  // rss
-  if (allPosts.length > 0) {
-    const rss = generateRss(allPosts)
-    fs.writeFileSync('./public/feed.xml', rss)
-  }
-
   return { props: { post, authorDetails, prev, next } }
 }
 
 export default function Blog({ post, authorDetails, prev, next }) {
-  const { mdxSource, toc, frontMatter } = post
+  const { mdxSource, mdxSourceCompressed, toc, frontMatter } = post
 
   return (
     <>
@@ -50,6 +42,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           toc={toc}
           mdxSource={mdxSource}
+          mdxSourceCompressed={mdxSourceCompressed}
           frontMatter={frontMatter}
           authorDetails={authorDetails}
           prev={prev}

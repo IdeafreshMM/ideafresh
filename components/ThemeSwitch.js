@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import { useTheme } from 'next-themes'
 
-const ThemeSwitch = () => {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme()
+const subscribe = () => () => {}
+const getSnapshot = () => true
+const getServerSnapshot = () => false
 
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), [])
+const ThemeSwitch = () => {
+  const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
   return (
     <button

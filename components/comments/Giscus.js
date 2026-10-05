@@ -16,10 +16,8 @@ const Giscus = ({ mapping }) => {
   const COMMENTS_ID = 'comments-container'
 
   const LoadComments = useCallback(() => {
-    setEnabledLoadComments(false)
-
     const { repo, repositoryId, category, categoryId, reactions, metadata, inputPosition, lang } =
-      siteMetadata?.comment?.giscusConfig
+      siteMetadata.comment.giscusConfig
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
@@ -54,7 +52,16 @@ const Giscus = ({ mapping }) => {
 
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
+      {enableLoadComments && (
+        <button
+          onClick={() => {
+            setEnabledLoadComments(false)
+            LoadComments()
+          }}
+        >
+          Load Comments
+        </button>
+      )}
       <div className="giscus" id={COMMENTS_ID} />
     </div>
   )
